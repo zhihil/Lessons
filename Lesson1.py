@@ -1,5 +1,11 @@
-# Begin with print statements.
-print "Hello world"
+# We'll be using the interactive interpreter.
+# In this case, it will print out anything that we give it.
+
+
+# Begin with print statements. BRACKETS.
+print("Hello world")
+help()                  # Enters an interactive helper
+
 
 # Next, variables.
 x = 5       # In this case, '=' is actually like an '<-'
@@ -11,49 +17,133 @@ print x     # Prints 7
 
 
 
-# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-# }}} SLIDE 1
 
-# Start with some imports.
-import fractals
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
+# Starting with objects.
+class Car(object):
+
+    def drive(self):
+        print "Vroom vroom"
+
+    def brake(self):
+        print "SCREEECH"
+
+    def openDoor(self, num):
+        print "Opening door number %i." % num
+
+
+# The brackets means we are making a new OBJECT.
+# Create a new Car OBJECT.
+car = Car()
+
+# Now we make the car do things.
+# '()' means we are calling something. -> running code somewhere else.
+car.drive()
+car.brake()
+
+# We make the car open, but this time we pass in an ARGUMENT.
+# An ARGUMENT is something we give to the code that's running somewhere else.
+car.openDoor(2)
+car.openDoor(3)
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
+# Start with some IMPORTS.
+# IMPORT -> taking code from somewhere else.
+# From fractals file, get Mandelbrot CLASS so we can make Mandelbrots.
+# CLASS -> like a factory which makes objects.
+
+# Mandelbrot is the name of the type of fractal we are creating.
 from fractals import Mandelbrot
-from fractals import showImage
 
 # Create a new Mandelbrot OBJECT.
-# Mandelbrot is the name of the type of fractal we are creating.
-# '()' -> calls
-m = Mandelbrot()
+# '()' means we are creating a new object.
+mandelbrot = Mandelbrot()
 
-# Make the Mandelbrot render. ('.' acts as '->').
-pic = m.render()
-
-# Show the result.
-showImage(pic)
+# This time, '()' means we are calling something.
+# We are calling 'render'.
+mandelbrot.render()
 
 
 
 # {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-# }}} SLIDE 2
+# }}}
 
-# Start with some imports.
+# Import Julia now.
 from fractals import Julia
 
 # Create a new Julia OBJECT.
-j = Julia()
+julia = Julia()
 
 # Make the Julia render.
-pic = j.render()
-
-# Show the result.
-showImage(pic)
+julia.render()
 
 
 
 # {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-# }}} SLIDE 3
+# }}}
+
+# Let's try to make some different kind of fractals.
+# The function 'render' can take some 'keyword arguments'.
+
+# *** Show defaults again. ***
+
+# Try to add some more colours.
+# We can say 'colors=50' because the function wants 'colors' as an input.
+julia.render(colors=50)
+mandelbrot.render(colors=50)
+
+# Let's change some other fields.
+julia.render(p=1.5)
+mandelbrot.render(p=1.5)
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
+# Let's cycle through some different values.
+# i goes from 0 -> 9, meaning:
+# i = 0: run code in loop.
+# i = 1: run code in loop.
+# ...
+# i = 9: run code in loop.
+for i in range(10):         
+    julia.render(colors=i + 30)        # Make the image with 'i' colors.
+
+# What if we want to use decimal values instead?
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
+# We use a for loop again, but this time divide 'i' by 10.
+# i goes from 0 -> 5,
+# j goes from 0 -> 0.5
+for i in range(5): 
+    j = (i / 10.0)
+
+    julia.render(p=j)
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
 
 # What if we want the user to decide what to create?
 # Let's use the 'input' function.
+
+# Input -> shows a message, gets typed message from user, 
+# assigns to 'fractal_type'.
+
+# NOTE: for Python 2 users, add the following line of code.
+input = raw_input
 
 # Input -> shows a message, gets typed message from user, 
 # assigns to 'fractal_type'.
@@ -64,19 +154,150 @@ print fractal_type
 # Now we know what the user wants to do.
 # If fractal_type is "Mandelbrot", create a Mandelbrot set.
 # Otherwise, if fractal_type is "Julia", create a Julia set.
+# Otherwise, don't do anything.
 
 
 
 # {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-# }}} SLIDE 4
+# }}}
 
-# Input -> shows a message, gets typed message from user, 
-# assigns to 'fractal_type'.
+# Note that '==' is comparison, it either returns True or False.
+if fractal_type == "Mandelbrot":
+    mandelbrot = Mandelbrot()
+    mandelbrot.render()
+
+elif fractal_type == "Julia":
+    julia = Julia()
+    mandelbrot.render()
+
+else:
+    # Otherwise, warn user.
+    print "That's not a valid type of fractal."
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
+# Let's give the user control of the other controls from before too.
+
+string_colors = input("How many colours?")
+
+# Note that 'input' returns a STRING.
+# STRING - a combination of letters, numbers, spaces.
+# We want to give our function a number (in this case, integer).
+
+# The int FUNCTION (technically a constructor) converts the STRING you give it
+# into an int.
+number_colors = int(string_colors)
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
+# Let's add this back to our program.
+
+if fractal_type == "Mandelbrot":
+    string_colors = input("How many colours?")
+    number_colors = int(string_colors)
+    mandelbrot = Mandelbrot()
+    mandelbrot.render(colors=number_colors)
+
+elif fractal_type == "Julia":
+    string_colors = input("How many colours?")
+    number_colors = int(string_colors)
+    julia = Julia()
+    julia.render(colors=number_colors)
+
+else:
+    print "That's not a valid type of fractal."
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
+# Let's add another control.
+
 fractal_type = input("What kind of fractal do you want to create?")
 
 if fractal_type == "Mandelbrot":
-    # Make a new mandelbrot set.
-    fractal = Mandelbrot()
+    str_colors = input("How many colours?")
+    num_colors = int(string_colors)
+    str_p = input("Enter a number between 0 and 2.")
+    num_p = float(str_p)       # -> Float just means decimal number.
+    mandelbrot = Mandelbrot()
+    mandelbrot.render(colors=number_colors, p=num_p)
 
 elif fractal_type == "Julia":
-    fractal = Julia()
+    str_colors = input("How many colours?")
+    num_colors = int(string_colors)
+    str_p = input("Enter a number between 0 and 2.")
+    num_p = float(str_p)
+    julia = Julia()
+    julia.render(colors=number_colors, p=num_p)
+
+else:
+    print "That's not a valid type of fractal."
+
+# We have a lot of redundant code. Let's fix this.
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
+# Let's make a FUNCTION.
+# A function is a group of code that we can run at any time.
+# It sometimes returns a value.
+def get_colors():
+    str_colors = input("How many colours?")
+    num_colors = int(string_colors)
+
+    # RETURN - means this is the value the function gives after finishing.
+    return number_colors
+
+
+def get_p():
+    str_p = input("Enter a number between 0 and 2.")
+    num_p = float(str_p)
+
+    return num_p
+
+
+
+fractal_type = input("What kind of fractal do you want to create?")
+
+if fractal_type == "Mandelbrot":
+    colors = get_colors()
+    p = get_p()
+    mandelbrot = Mandelbrot()
+    mandelbrot.render(colors=colors, p=p)
+
+elif fractal_type == "Julia":
+    colors = get_colors()
+    p = get_p()
+    julia = Julia()
+    julia.render(colors=colors, p=p)
+
+else:
+    print "That's not a valid type of fractal."
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
+# Some more contorls to mess around with.
+# - width
+# - height
+# MANDELBROT:
+# - p
+# JULIA:
+# - p
+# - c1
+# - c2
+# NEWTON (more math-based):
+# - f
+# - a
