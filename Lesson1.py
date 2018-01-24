@@ -53,21 +53,61 @@ car.openDoor(3)
 # {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 # }}}
 
+# NOTES:
+
+# - Start with goal, end with solution,
+# - SAVE before RUNNING
+
+# INSTALLATION:
+# For using pip:
+# - Add Python to PATH variable.
+# - Use python -m pip install numpy matplotlib
+# For using conda:
+# - ???
+
+# 1. Open editor.
+# 2. Type print("Hello world.")
+# 3. Save as "???.PY" in same folder as fractals.py
+# 4. ENTER "quit()" in terminal.
+# 5. python ***drag file THAT WAS WORKED ON into terminal***
+
+# Create glossary:
+# - class -> 
+# - object
+# - variables
+# - functions
+# - comments
+# - indentation
+# - for loops
+# - "==" vs "="
+
+
+
+# {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+# }}}
+
 # Start with some IMPORTS.
 # IMPORT -> taking code from somewhere else.
 # From fractals file, get Mandelbrot CLASS so we can make Mandelbrots.
 # CLASS -> like a factory which makes objects.
+
+# In the fractals.py file, we've created the code for doing this.
+# In our "???.PY"
+# '=' takes a value from the right side, puts it in the container on the left.
+# Every time we do something with that container, we're doing something with
+# our Mandelbrot.
 
 # Mandelbrot is the name of the type of fractal we are creating.
 from fractals import Mandelbrot
 
 # Create a new Mandelbrot OBJECT.
 # '()' means we are creating a new object.
-mandelbrot = Mandelbrot()
+fractal1 = Mandelbrot()
 
 # This time, '()' means we are calling something.
 # We are calling 'render'.
-mandelbrot.render()
+# This is going to the FILE WE IMPORTED.
+fractal1.render()
 
 
 
@@ -78,10 +118,10 @@ mandelbrot.render()
 from fractals import Julia
 
 # Create a new Julia OBJECT.
-julia = Julia()
+fractal2 = Julia()
 
 # Make the Julia render.
-julia.render()
+fractal2.render()
 
 
 
@@ -93,28 +133,31 @@ julia.render()
 
 # *** Show defaults again. ***
 
+#NOTE: *** COLORS not COLOURS ***
 # Try to add some more colours.
 # We can say 'colors=50' because the function wants 'colors' as an input.
-julia.render(colors=50)
-mandelbrot.render(colors=50)
+fractal1.render(colors=50)
+fractal2.render(colors=50)
 
 # Let's change some other fields.
-julia.render(p=1.5)
-mandelbrot.render(p=1.5)
+fractal1.render(p=1.5)
+fractal2.render(p=1.5)
 
 
 
 # {{{ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 # }}}
 
+# NOTE: Remove previous 'render' calls.
+
 # Let's cycle through some different values.
-# i goes from 0 -> 9, meaning:
+# i goes from 1 -> 4, meaning:
 # i = 0: run code in loop.
 # i = 1: run code in loop.
 # ...
-# i = 9: run code in loop.
-for i in range(10):         
-    julia.render(colors=i + 30)        # Make the image with 'i' colors.
+# i = 4: run code in loop.
+for i in range(1, 5):         
+    fractal1.render(colors=i * 10)        # Make the image with 'i' colors.
 
 # What if we want to use decimal values instead?
 
@@ -126,10 +169,10 @@ for i in range(10):
 # We use a for loop again, but this time divide 'i' by 10.
 # i goes from 0 -> 5,
 # j goes from 0 -> 0.5
-for i in range(5): 
+for i in range(1, 5): 
     j = (i / 10.0)
 
-    julia.render(p=j)
+    fractal2.render(p=i / 10.0 + 1)
 
 
 
@@ -139,7 +182,7 @@ for i in range(5):
 # What if we want the user to decide what to create?
 # Let's use the 'input' function.
 
-# Input -> shows a message, gets typed message from user, 
+# Input -> ask a question, get an answer, 
 # assigns to 'fractal_type'.
 
 # NOTE: for Python 2 users, add the following line of code.
@@ -162,13 +205,14 @@ print fractal_type
 # }}}
 
 # Note that '==' is comparison, it either returns True or False.
+# COMPLETELY DIFFERENT FROM "=".
+# If the user writes "Bob" for example.
+# tell the user they made a mistake.
 if fractal_type == "Mandelbrot":
-    mandelbrot = Mandelbrot()
-    mandelbrot.render()
+    fractal1.render()
 
 elif fractal_type == "Julia":
-    julia = Julia()
-    mandelbrot.render()
+    fractal2.render()
 
 else:
     # Otherwise, warn user.
@@ -181,7 +225,7 @@ else:
 
 # Let's give the user control of the other controls from before too.
 
-string_colors = input("How many colours?")
+colors = input("How many colours?")
 
 # Note that 'input' returns a STRING.
 # STRING - a combination of letters, numbers, spaces.
@@ -189,7 +233,8 @@ string_colors = input("How many colours?")
 
 # The int FUNCTION (technically a constructor) converts the STRING you give it
 # into an int.
-number_colors = int(string_colors)
+# TELLING COMPUTER 'colors' is a number.
+colors = int(colors)
 
 
 
@@ -199,16 +244,16 @@ number_colors = int(string_colors)
 # Let's add this back to our program.
 
 if fractal_type == "Mandelbrot":
-    string_colors = input("How many colours?")
-    number_colors = int(string_colors)
-    mandelbrot = Mandelbrot()
-    mandelbrot.render(colors=number_colors)
+    colors = input("How many colours?")
+    colors = int(colors)
+    fractal1 = Mandelbrot()
+    fractal1.render(colors=colors)
 
 elif fractal_type == "Julia":
-    string_colors = input("How many colours?")
-    number_colors = int(string_colors)
-    julia = Julia()
-    julia.render(colors=number_colors)
+    colors = input("How many colours?")
+    colors = int(colors)
+    fractal2 = Julia()
+    fractal2.render(colors=colors)
 
 else:
     print "That's not a valid type of fractal."
@@ -227,16 +272,16 @@ if fractal_type == "Mandelbrot":
     num_colors = int(string_colors)
     str_p = input("Enter a number between 0 and 2.")
     num_p = float(str_p)       # -> Float just means decimal number.
-    mandelbrot = Mandelbrot()
-    mandelbrot.render(colors=number_colors, p=num_p)
+    fractal1 = Mandelbrot()
+    fractal1.render(colors=number_colors, p=num_p)
 
 elif fractal_type == "Julia":
     str_colors = input("How many colours?")
     num_colors = int(string_colors)
     str_p = input("Enter a number between 0 and 2.")
     num_p = float(str_p)
-    julia = Julia()
-    julia.render(colors=number_colors, p=num_p)
+    fractal2 = Julia()
+    fractal2.render(colors=number_colors, p=num_p)
 
 else:
     print "That's not a valid type of fractal."
@@ -272,14 +317,14 @@ fractal_type = input("What kind of fractal do you want to create?")
 if fractal_type == "Mandelbrot":
     colors = get_colors()
     p = get_p()
-    mandelbrot = Mandelbrot()
-    mandelbrot.render(colors=colors, p=p)
+    fractal1 = Mandelbrot()
+    fractal1.render(colors=colors, p=p)
 
 elif fractal_type == "Julia":
     colors = get_colors()
     p = get_p()
-    julia = Julia()
-    julia.render(colors=colors, p=p)
+    fractal2 = Julia()
+    fractal2.render(colors=colors, p=p)
 
 else:
     print "That's not a valid type of fractal."
@@ -301,3 +346,13 @@ else:
 # NEWTON (more math-based):
 # - f
 # - a
+
+
+
+# What is Python? What is it used for?
+# What is a terminal?
+# What is a text editor? Why do we need to use it?
+
+# Google doc for coding
+# - can correct for bad syntax
+# - colour coding
