@@ -70,9 +70,9 @@ function isHomeworkDone (mood, urgent){
 console.log("isHomeworkDone : " + isHomeworkDone ("Good", true));
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-// - { { {    7. CLASSES    } } } - 
+// - { { {    7. OBJECTS    } } } - 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-function Pet(age){ // class constructor
+function Pet(age){ // prototype object constructor
 	this.animal = "doggo";
 	this.breed = "puggerino";
 	this.pet_name ="Sir Puggington";
