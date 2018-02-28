@@ -28,9 +28,7 @@ Quickly covering the following topics:
 Explaining the definition and importance of the following:
 
 - game loop
-![]()
-- finite-state machine (eg. turnstile)
-![wikipedia, state-machine](https://upload.wikimedia.org/wikipedia/commons/9/9e/Turnstile_state_machine_colored.svg)
+- finite-state machine
 
 ## Part 4) Application of JavaScript and Game Engines in a Web Game 
 
