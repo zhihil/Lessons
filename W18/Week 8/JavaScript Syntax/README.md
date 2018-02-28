@@ -9,4 +9,4 @@ This folder provides a brief overview of the syntax required for the 8 basic fea
 4. Loops
 5. Arrays
 6. Functions
-7. Classes
+7. Objects
