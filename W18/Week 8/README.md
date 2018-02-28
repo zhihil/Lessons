@@ -35,5 +35,6 @@ Explaining the definition and importance of the following:
 - How the project has a game loop
 - How the project has its own finite-state machine
 - General project structure overview 
-- Highlight specific project sections and their functionality
+- Highlight specific project sections and their functionality so we can start fixing bugs and adding new features
 - How to resolve bugs reliably with minimal guess work
+- How to know where to add code to implement new features
