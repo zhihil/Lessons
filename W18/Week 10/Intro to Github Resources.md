@@ -7,6 +7,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 ## GitHub Resources to Explore:
+
+![alt text](https://github.com/UWCoffeeNCode/Lessons/blob/master/W18/Week%2010/github%20resources.png "GitHub Guides Screenshot")
+
 - All GitHub Guides: https://guides.github.com/
 
 | Guide Name | Reading Time | Link |
