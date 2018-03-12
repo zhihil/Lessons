@@ -9,6 +9,55 @@ const VERTICAL = 1;
 const WIDTH = window.innerWidth;
 const HEIGHT = window.innerHeight;
 
+var RES_URL;
+
+
+/** Sets URL from which resources are accessed. */
+function setResUrl(root) {
+    RES_URL = root;
+}
+
+
+/** Loads global resources. Called after setRoot. */
+function loadResources() {
+    // Load images
+    imgBow = new SpriteSheet("img/bow.png", 420, 360, 6, 4, 1.5);
+    imgArrow = new Img("img/horizontal_arrow.png", 128, 40);
+    imgTarget = new Img("img/crosshair_red_small.png", 42);
+    imgBoard = new Img("img/target_colored_outline.png", 142);
+
+    skyTop = new Img("img/skybox_top.png", HEIGHT / 2);
+    skyBackground = new Img("img/skybox_sideHills.png", HEIGHT / 2);
+
+    grass = new Img("img/stone_grass.png", GRASS_SIZE);
+    stone = new Img("img/stone.png", GRASS_SIZE);
+    gold = new Img("img/stone_gold.png", GRASS_SIZE);
+
+    grassBlades = [];
+    for (var i = 1; i <= 4; i++) {
+        grassBlade = new Img("img/grass" + i + ".png", GRASS_SIZE);
+        grassBlades.push(grassBlade);
+    }
+
+    grassBladePositions = {};
+    for (var i = 0; i < 10; i++) {
+        pos = Math.floor(Math.random() * WIDTH / GRASS_SIZE)
+        grassBlade = grassBlades[Math.floor(Math.random() * grassBlades.length)];
+        grassBladePositions[pos] = grassBlade;
+    }
+
+    // Set variables based on image dimensions
+    boardHeight = imgBoard.height;
+    boardWidth = 10;
+    boardBuffer = 200;
+    board = new Projectile(boardWidth, boardHeight, false, true, false);
+
+    board.vx = 0;
+    board.vy = 1;
+    board.x = WIDTH - boardWidth - boardBuffer;
+    board.y = 0;
+}
+
 
 /**
  * Sprite Sheet.
@@ -57,7 +106,7 @@ function Img(src, x, y) {
     y = (typeof y == "undefined") ? x : y;
 
     this.img = new Image(x * SCALING_FACTOR, y * SCALING_FACTOR);
-    this.img.src = src;
+    this.img.src = RES_URL + src;
     this.width = this.img.width;
     this.height = this.img.height;
 
@@ -109,31 +158,22 @@ var canvas;
 var canvasContext;
 
 // icons
-var imgBow = new SpriteSheet("img/bow.png", 420, 360, 6, 4, 1.5);
-var imgArrow = new Img("img/horizontal_arrow.png", 128, 40);
-var imgTarget = new Img("img/crosshair_red_small.png", 42);
-var imgBoard = new Img("img/target_colored_outline.png", 142);
+var imgBow;
+var imgArrow;
+var imgTarget;
+var imgBoard;
 
 // background
-var skyTop = new Img("img/skybox_top.png", HEIGHT / 2);
-var skyBackground = new Img("img/skybox_sideHills.png", HEIGHT / 2);
+var skyTop;
+var skyBackground;
 
 // ground
 const GRASS_SIZE = 64;
-var grass = new Img("img/stone_grass.png", GRASS_SIZE);
-var stone = new Img("img/stone.png", GRASS_SIZE);
-var gold = new Img("img/stone_gold.png", GRASS_SIZE);
+var grass;
+var stone;
+var gold;
 var grassBlades = [];
-for (var i = 1; i <= 4; i++) {
-    grassBlade = new Img("img/grass" + i + ".png", GRASS_SIZE);
-    grassBlades.push(grassBlade);
-}
 var grassBladePositions = {};
-for (var i = 0; i < 10; i++) {
-    pos = Math.floor(Math.random() * WIDTH / GRASS_SIZE)
-    grassBlade = grassBlades[Math.floor(Math.random() * grassBlades.length)];
-    grassBladePositions[pos] = grassBlade;
-}
 
 
 
@@ -151,7 +191,8 @@ var gameState = PLACING_BOW;
 // game settings
 const FPS = 60;
 const GRAVITY = 1;
-const MAX_ARROWS = 3;
+const MAX_RENDERED_ARROWS = 3;
+const MAX_FIRED_ARROWS = 3;
 
 var groundHeight;
 
@@ -160,14 +201,10 @@ var arrowHeight = 5;
 var arrows = [];
 var arrowsFired = 0; // Updated in fire()
 
-var boardHeight = imgBoard.height;
-var boardWidth = 10;
-var boardBuffer = 200;
-var board = new Projectile(boardWidth, boardHeight, false, true, false);
-board.vx = 0;
-board.vy = 1;
-board.x = WIDTH - boardWidth - boardBuffer;
-board.y = 0;
+var boardHeight;
+var boardWidth;
+var boardBuffer;
+var board;
 
 var bowLocation = [0, 0];
 var targetLocation = [0,0];
@@ -192,7 +229,6 @@ window.onload = function() {
     // listeners
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('click', handleMouseClick);
-
 }
 
 
@@ -238,8 +274,10 @@ function fire(){
     arrow.vy = (targetLocation[1] - bowLocation[1]) / (FPS);
     arrows.push(arrow);
 
-    if (arrows.length > MAX_ARROWS) arrows.shift();
+    if (arrows.length > MAX_RENDERED_ARROWS) arrows.shift();
     arrowsFired++;
+
+    if (arrowsFired > MAX_FIRED_ARROWS) endGame();
 }
 
 
@@ -359,6 +397,19 @@ function getMousePos(evt){
 }
 
 
+/** Ends game, giving user chance to restart. */
+function endGame() {
+    // Overlay
+    // Show score
+    // Show table 
+    // Give user chance to restart
+    // TODO: add high score to renderGUI
+
+    uploadScore(score);
+    score = 0;
+}
+
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // - { { {    RENDERING    } } } -
@@ -457,9 +508,33 @@ function drawBackground() {
     // drawTesselation(stone, HORIZONTAL, lowestHeight);
 }
 
-/** Draws GUI, including arrows fired, and total score**/
+
+/** Draws GUI, including arrows fired, and total score. */
 function drawGUI(){
-  canvasContext.font = "20px Open Sans";
-  canvasContext.fillText("Arrows Fired: " + arrowsFired, 10, 20);
-  canvasContext.fillText("Score: " + score, 10, 40);
+    highScore = "10"
+    leftPadding = 10
+    topPadding = 20
+    spacing = 20
+
+    canvasContext.font = "20px Open Sans";
+    canvasContext.fillText(
+        "Arrows Fired: " + arrowsFired, leftPadding, topPadding);
+    canvasContext.fillText(
+        "Score: " + score, leftPadding, topPadding + spacing);
+    canvasContext.fillText(
+        "High Score: " + highScore, leftPadding, topPadding + spacing * 2);
+}
+
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// - { { {    WEB SERVER    } } } -
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+/** Uploads score to server. */
+function uploadScore(score) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/score", true);
+    xhttp.send(score)
 }
