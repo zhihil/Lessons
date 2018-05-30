@@ -24,21 +24,24 @@
 
 ### 3. HTML
 - [ ] element vs attribute
+- [ ] unordered lists vs ordered lists
 - [ ] div vs span
 - [ ] class vs id
 - [ ] link vs image
-- [ ] table
-- [ ] lists
-- [ ] layout
+- [ ] table vs layout
 
 ### 4. CSS
-- [ ] 3 layers of CSS
-- [ ] colours and fonts
+- [ ] inline CSS vs internal CSS vs external CSS
+- [ ] colours
+- [ ] background colours
+- [ ] fonts
+- [ ] font sizes
 - [ ] Box Model
 
 ### 5. JS
 - [ ] intro to basic programming
 - [ ] HTML DOM with JS
 
-## 6. Activity
-- [ ] 
+### 6. Activity
+- [ ] explore how buttons work
+- [ ] explore how to make text change colour if you hover over it with your mouse
