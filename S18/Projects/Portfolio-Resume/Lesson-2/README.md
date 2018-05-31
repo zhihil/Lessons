@@ -35,3 +35,7 @@
 ## 5. jQuery
 - [ ] installation
 - [ ] image/shape animations
+
+## 6. Activity
+- [ ] spice up your icebreaker web page with Bootstrap and/or jQuery
+- [ ] implement at least one feature using Bootstrap or jQuery that we did NOT discuss in the lesson
