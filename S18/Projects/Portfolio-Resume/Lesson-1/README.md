@@ -1,12 +1,14 @@
 # Meet-Up #1 Agenda:
 
-### 1. Text Editors
+**Objective**: get a first-look at web development and build a foundation in HTML, CSS, and JS and what they each can do
+
+## 1. Text Editors
 - [x] notepad++ or sublime text 3
 
-### 2. Good File Structure
+## 2. Good File Structure
 - [x] separate folders for images, js, css
 
-### 3. HTML
+## 3. HTML
 - [x] *element vs attribute
 - [x] unordered lists vs ordered lists
 - [x] *div vs span
@@ -14,7 +16,7 @@
 - [ ] *link vs image
 - [ ] table vs layout
 
-### 4. CSS
+## 4. CSS
 - [x] inline CSS vs internal CSS vs external CSS
 - [x] colours
 - [ ] background colours
@@ -22,7 +24,7 @@
 - [x] font sizes
 - [ ] Box Model
 
-### 5. JS
+## 5. JS
 - [x] printing
 - [x] variables
 - [ ] if-statements
