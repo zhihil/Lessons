@@ -17,25 +17,25 @@
 
 
 ### 1. Text Editors
-- [ ] notepad++ or sublime text 3
+- [x] notepad++ or sublime text 3
 
 ### 2. Good File Structure
-- [ ] separate folders for images, js, css
+- [x] separate folders for images, js, css
 
 ### 3. HTML
-- [ ] element vs attribute
-- [ ] unordered lists vs ordered lists
-- [ ] div vs span
-- [ ] class vs id
-- [ ] link vs image
+- [x] *element vs attribute
+- [x] unordered lists vs ordered lists
+- [x] *div vs span
+- [ ] *class vs id
+- [ ] *link vs image
 - [ ] table vs layout
 
 ### 4. CSS
-- [ ] inline CSS vs internal CSS vs external CSS
-- [ ] colours
+- [x] inline CSS vs internal CSS vs external CSS
+- [x] colours
 - [ ] background colours
-- [ ] fonts
-- [ ] font sizes
+- [x] fonts
+- [x] font sizes
 - [ ] Box Model
 
 ### 5. JS
