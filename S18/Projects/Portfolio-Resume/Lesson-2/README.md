@@ -18,6 +18,8 @@
 - [x] font sizes
 - [ ] *box model
 - [ ] *changing colour based on state
+- [ ] *specificity
+- [ ] *chained classes
 
 ## 3. JS
 - [x] printing
