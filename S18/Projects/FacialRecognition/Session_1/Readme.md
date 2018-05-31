@@ -24,6 +24,16 @@ We just require that they take some inputs, changed a by connection weights, and
 
 ![alt text](artificialNeuron.jpg "Neuron")
 
+More explicitly, we want the neuron to implement the following function:
+
+$h = f\left( \displaystyle \sum_i \left(x_i \cdot w_i\right) + b \right) = f(\vec w \cdot \vec x + b)$
+
+Where:
+  - $\vec x$ is the input to the neuron; $x_i$ is the i'th component of that input
+  - $\vec w$ is the weights leading to that neuron; $w_i$ is the i'th component of the weights
+  - $b$ is the bias
+  - $f$ is some non-linear function
+
 We'll call this a neuron. or a unit.
 
 ## Perceptron
