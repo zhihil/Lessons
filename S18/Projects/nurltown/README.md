@@ -8,7 +8,7 @@ and **fight to the death.**
 * Develop neural networks to give your nurlet a brain (it’s ALIIIIIVE!!)
 * Implement evolutionary algorithms to teach your nurlets how to eat, grow, multiply, and defend against their enemies
 
-### Tools & Components
+## Tools & Components
 * python 3
 * virtualenv for sandboxing python
 * numpy numerical computation package
