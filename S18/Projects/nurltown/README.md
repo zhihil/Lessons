@@ -21,8 +21,8 @@ and **fight to the death.**
 | :------- | ------ | ------------- | ---------------------------------------------- |
 | -        | 4      | May 23, 2018  | Introductions & Sign-ups                       |
 | 1        | 5      | May 30, 2018  | Intro to game design, tools & components, and installation of software |
-| 2        | 6      | June 6, 2018  | `-- NO LESSON (AHRAR UNAVAILABLE) --`       |
-| -        | 7      | June 13, 2018 | `-- NO LESSON (HELL WEEK) --`                  |
+| 2        | 6      | June 6, 2018  | `-- OPTIONAL MEETUP (AHRAR UNAVAILABLE) --` |
+| -        | 7      | June 13, 2018 | `-- OPTIONAL MEETUP (HELL WEEK) --` |
 | 3        | 8      | June 20, 2018 | Explore pygame and begin building the ecosystem |
 | 4        | 9      | June 27, 2018 | -- |
 | 5        | 10     | July 4, 2018  | -- |
