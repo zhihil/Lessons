@@ -27,8 +27,9 @@ and **fight to the death.**
 | 4        | 9      | June 27, 2018 | -- |
 | 5        | 10     | July 4, 2018  | -- |
 | 6        | 11     | July 11, 2018 | -- |
-| 7        | 12     | July 18, 2018 | -- |
-| -        | 13     | July 25, 2018 | -- |
+| 7        | 12     | July 18, 2018 | Catch-up and polishing time                    |
+| -        | 13     | July 25, 2018 | End of Term Event!                             |
+
 
 ## Installation
 
