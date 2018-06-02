@@ -31,6 +31,18 @@ and **fight to the death.**
 | -        | 13     | July 25, 2018 | End of Term Event!                             |
 
 
+## Project Members
+* Ahrar Monsur (Team Lead)
+* Aditi Sharma
+* Akshar Goyal
+* Cindy Xie
+* Dhruvit Bhavsar
+* Dylan Hermatillake
+* Jiwoo Jang
+* Mahir Rashid
+* Shawn Sui
+* Shivam Suthendran
+
 ## Installation
 
 For detailed instructions on how to install `python3` and `virtualenv`, read our
