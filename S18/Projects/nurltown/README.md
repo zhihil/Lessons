@@ -33,24 +33,5 @@ and **fight to the death.**
 
 ## Installation
 
-### Installing `python3`
-#### On Mac OS X
-
-
-1. First, you must install the Homebrew package manager. Open a terminal and run
-
-`$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-
-2. Insert the Homebrew directory at the top of your **PATH** environment variable. You can do this by adding
-the following line at the bottom of your `~/.profile` file
-
-`export PATH=/usr/local/bin:/usr/local/sbin:$PATH`
-
-3. `brew install python`
-
-Note: The python installation will also use the `pip` python package manager. We will use this to install the python utilities
-and libraries that we will need.
-
-### Installing `virtualenv`
-1. `pip install --upgrade pip`
-
+For detailed instructions on how to install `python3` and `virtualenv`, read our
+[Python installation infosheet](https://github.com/UWCoffeeNCode/resources/wiki/Installing-Python).
