@@ -14,12 +14,21 @@
 - [x] inline CSS vs internal CSS vs external CSS
 - [x] colours
 - [ ] background colours
-- [x] fonts
-- [x] font sizes
+- [x] fonts-family vs font-style vs font-size
 - [ ] *box model
-- [ ] *changing colour based on state
+- [ ] *positioning
+- [ ] float
+- [ ] align
+- [ ] icons
+- [ ] combinators?
+- [ ] *states
+- [ ] opacity and hover
 - [ ] *specificity
+- [ ] *pseudo-classes (states) vs classes
 - [ ] *chained classes
+- [ ] navigation bar
+- [ ] dropdowns
+- [ ] *website layout
 
 ## 3. JS
 - [x] printing
@@ -33,6 +42,8 @@
 ## 4. Bootstrap
 - [ ] installation
 - [ ] *buttons
+- [ ] *templates
+- [ ] carousel
 
 ## 5. jQuery
 - [ ] installation
