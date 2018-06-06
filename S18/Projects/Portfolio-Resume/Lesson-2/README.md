@@ -30,6 +30,7 @@
 - [ ] opacity
 - [ ] *specificity
 - [ ] *pseudo-classes (states) vs classes
+- [ ] pseudo-elements vs elements
 - [ ] *chained classes
 - [ ] *website layout
 - [ ] navigation bar
