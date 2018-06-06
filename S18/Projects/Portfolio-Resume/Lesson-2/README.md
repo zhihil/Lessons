@@ -1,6 +1,6 @@
 # Meet-Up #2 Agenda:
 
-**Objective**: wrap up on HTML, CSS, and JS, then take a first-look at Bootstrap and maybe jQuery
+**Objective**: wrap up on HTML, CSS, and JS, then take a first-look at Bootstrap
 
 ## 1. HTML
 - [x] *element vs attribute
@@ -40,7 +40,8 @@
 - [ ] *HTML DOM with JS
 
 ## 4. Bootstrap
-- [ ] installation
+- [ ] *installation (CDN method)
+- [ ] tables
 - [ ] *buttons
 - [ ] *templates
 - [ ] carousel
