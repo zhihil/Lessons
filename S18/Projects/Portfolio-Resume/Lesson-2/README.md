@@ -25,7 +25,7 @@
 - [ ] *left vs right vs top vs bottom
 - [ ] *float (left vs right vs none)
 - [ ] *display (inline vs block)
-- [ ] align 
+- [ ] *text-align 
 - [ ] *states (active vs visited vs hover)
 - [ ] opacity
 - [ ] *specificity
