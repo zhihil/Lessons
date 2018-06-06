@@ -119,5 +119,11 @@ unfocusing issue) before reinstalling pygame.
 After you have done this extra step, try running the example game again to see if it works on your Mac. If you are still
 having issues, feel free to reach out to one of the Coffee 'N Code execs for help!
 
+#### Exploring Pygame
+Once you have successfully installed the pygame package, you can learn the basics from the our 
+[pygame tutorial](https://github.com/UWCoffeeNCode/Lessons/blob/master/S18/Projects/nurltown/tutorials/exploring_pygame.ipynb).
+Specifically, I advise you to watch the video series referenced in the tutorial; it is a great resource to understand the
+process of creating the building blocks of a 2D game.
+
 _authored by Ahrar Monsur_
     
