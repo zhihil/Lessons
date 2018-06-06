@@ -3,3 +3,6 @@
 .idea/
 config
 venv/
+
+# Jupyter specific files
+.ipynb_checkpoints

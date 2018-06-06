@@ -118,4 +118,6 @@ unfocusing issue) before reinstalling pygame.
 
 After you have done this extra step, try running the example game again to see if it works on your Mac. If you are still
 having issues, feel free to reach out to one of the Coffee 'N Code execs for help!
+
+_authored by Ahrar Monsur_
     
