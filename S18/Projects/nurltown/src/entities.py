@@ -1,6 +1,7 @@
 import pygame as pg
 import config as cfg
 import random as rd
+import math
 import colors
 
 class Entity(pg.sprite.Sprite):
@@ -23,6 +24,22 @@ class Entity(pg.sprite.Sprite):
         self.rect.x = init_x
         self.rect.y = init_y
 
+    def distance_to(self, other):
+        my = self.rect
+        its = other.rect
+        dist = math.sqrt((its.x - my.x)**2 + (its.y - my.y)**2)
+        return dist
+
+    def unit_vector_to(self, other):
+        my = self.rect
+        its = other.rect
+        dist = self.distance_to(other)
+        xhat = (its.x - my.x)/dist
+        yhat = (its.y - my.y)/dist
+        return xhat, yhat
+
+
+
 class Nurlet(Entity):
     """
     Class representing the inhabitant of Nurltown.
@@ -33,11 +50,35 @@ class Nurlet(Entity):
 
         # Call the parent class constructor
         super(Nurlet, self).__init__(sprite, init_x, init_y)
+        self.speed = cfg.NURLET_SPEED
 
-    def update(self):
-        multiplier = 10
-        self.rect.x += multiplier * rd.randint(-1, 1)
-        self.rect.y += multiplier * rd.randint(-1, 1)
+    def update(self, food):
+        self.seek_closest(food)
+        self.eat_nearby(food)
+
+    def seek_closest(self, group):
+        # Initialize variables for closest food
+        closest_distance = math.inf
+        closest_entity = None
+
+
+        # Find the closest food
+        for entity in group:
+            dist = self.distance_to(entity)
+            if dist < closest_distance:
+                closest_distance = dist
+                closest_entity = entity
+
+        # Move towards the closest food at maximum speed
+        x, y = [self.speed * i for i in self.unit_vector_to(closest_entity)]
+        self.move(x, y)
+
+    def eat_nearby(self, food):
+        pg.sprite.spritecollide(self, food, True)
+
+
+    def move(self, x, y):
+        self.rect.move_ip(x, y)
 
 
 class Food(Entity):

@@ -7,8 +7,6 @@ import entities as ntts
 import random as rd
 import colors
 
-from functools import reduce
-
 def main():
     """
     Main game loop
@@ -20,12 +18,13 @@ def main():
 
     screen = pg.display.set_mode((width, height))
     constrain_within_screen = screen_constraint_generator(screen)
+    get_random_pos = random_pos_generator(screen)
 
     nurlets = pg.sprite.Group()
     food = pg.sprite.Group()
 
     nurlet = ntts.Nurlet(width/2, height/2)
-    jellies = [ntts.Food(*get_random_pos(screen)) for x in range(cfg.MAX_NUM_FOOD)]
+    jellies = [ntts.Food(*get_random_pos()) for x in range(cfg.MAX_NUM_FOOD)]
 
     entity_groups = [food, nurlets]
 
@@ -49,13 +48,17 @@ def main():
         screen.fill(colors.black)
 
         # Update the nurlets
-        for n in nurlets:
-            n.update()
+        nurlets.update(food)
+
+        # Replenish food
+        num_to_respawn = max(0, cfg.MAX_NUM_FOOD - len(food))
+        if num_to_respawn: food.add(ntts.Food(*get_random_pos()))
 
 
         # Redraw the entities
         for group in entity_groups:
-            map(constrain_within_screen, group.sprites())
+            for sprite in group.sprites():
+                constrain_within_screen(sprite)
             group.draw(screen)
 
         pg.display.update()
@@ -83,20 +86,29 @@ def screen_constraint_generator(screen):
     return generated_func
 
 
-def get_random_pos(screen):
+def random_pos_generator(screen):
     """
-    Function with provides a random location within the bounds of a screen
+    A generator Function which produces a function which returns a random location within the bounds of a supplied screen
     :param screen: A game screen
     :type screen: pygame.Surface
-    :return: An (x, y) coordinate within the screen
-    :rtype: tuple
+    :return: A function which provides a random location within the bounds of a supplied screen
+    :rtype: function
     """
 
-    rect = screen.get_rect()
-    x = rd.randint(rect.left, rect.width)
-    y = rd.randint(rect.top, rect.height)
+    def generated_func():
+        """
+        A function which provides a random location within the bounds of a supplied screen
+        :return: An (x, y) coordinate within the screen
+        :rtype: tuple
+        """
 
-    return x, y
+        rect = screen.get_rect()
+        x = rd.randint(rect.left, rect.width)
+        y = rd.randint(rect.top, rect.height)
+
+        return x, y
+
+    return generated_func
 
 if __name__ == "__main__":
     main()
