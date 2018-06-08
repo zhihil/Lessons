@@ -13,21 +13,154 @@
 
 ## 3. Coding
 **Challenge 1:**
-Using a push button and Millis(), create a program that will turn on an LED if the button is exactly 1 per second for 3 seconds.
+Using 1 push button and Millis(), create a program that will turn on an LED if 4 button is presses exactly are spaced exactly 1 second apart. In other words press the button at 60 bpm for 4 seconds.
 
 **Challenge 2:**
-Using multiple push buttons, create a program that will turn on an LED only if the push buttons are pressed in the correct order.
+Using multiple push buttons, create a program that will turn on an LED only if the push buttons are pressed in the correct order. You get to decide the order.
 
 *Solution 1*
 
 ```c++
-// Solution will be uploaded after Wednesday
+const int buttonPin = 2;     // the number of the pushbutton pin
+const int ledPin =  12;      // the number of the LED pin
+
+int buttonState = 0;         // variable for reading the pushbutton status
+int timeOfPress = 0;
+int differenceOfPresses = 0;
+int score = 0;
+bool pressed = false; // Used so you only read the buttonState once per push
+
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(ledPin, OUTPUT);
+  // initialize the pushbutton pin as an input:
+  pinMode(buttonPin, INPUT);
+  // Turn off LED
+  digitalWrite(ledPin, LOW);
+  // Setup serial monitor
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the state of the pushbutton value:
+  buttonState = digitalRead(buttonPin);
+
+  if (buttonState == HIGH && pressed == false) {
+    differenceOfPresses = millis () - timeOfPress;
+    timeOfPress = millis ();
+    // If your press is within .2 seconds of 1 second then it counts
+    if (differenceOfPresses < 1200 && differenceOfPresses > 800)
+      score++;
+    // If your press is off then reset the score
+    else
+      score = 0;
+    pressed = true;
+    // Debuging output
+    Serial.print("Difference: ");
+    Serial.println(differenceOfPresses);
+  }
+
+  if (buttonState == LOW && pressed == true){
+    pressed = false;
+  }
+
+  // If you get 3 presses after the initial press
+  // in a row the LED will turn on
+  if (score >= 3) {
+    digitalWrite(ledPin, HIGH);
+  }
+}
 ```
 
 *Solution 2*
 
+The setup for this solution was 3 buttons placed in a row horizontally. The code was left, right, middle, right.
+This solution also has a small problem in it. It functions fine, but it could be better. Try to find the bug!
 ```c++
-// Solution will be uploaded after Wednesday
+const int leftButtonPin = 2;     // the number of the left pushbutton pin
+const int rightButtonPin = 3;     // the number of the middle pushbutton pin
+const int middleButtonPin = 4;     // the number of the right pushbutton pin
+const int ledPin =  12;      // the number of the LED pin
+
+int leftButtonState = 0;         // variable for reading the pushbutton status
+int middleButtonState = 0;
+int rightButtonState = 0;
+
+int input[4];
+// The correct order of pressing
+const int answer[4] = {2,4,3,4};
+// Counts the current press
+int counter;
+bool solved = false;
+bool pressed = false; // Used so you only read the buttonState once per push
+
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(ledPin, OUTPUT);
+  // initialize the pushbutton pin as an input:
+  pinMode(leftButtonPin, INPUT);
+  pinMode(middleButtonPin, INPUT);
+  pinMode(rightButtonPin, INPUT);
+  // Turn off LED
+  digitalWrite(ledPin, LOW);
+  // Setup serial monitor
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the state of the pushbutton value:
+  leftButtonState = digitalRead(leftButtonPin);
+  middleButtonState = digitalRead(middleButtonPin);
+  rightButtonState = digitalRead(rightButtonPin);
+
+  // Check left button
+  if (leftButtonState == HIGH && pressed == false) {
+    input[counter] = leftButtonPin;
+    pressed = true;
+    // Debuging output
+    Serial.print("Pin: ");
+    Serial.println(input[counter]);
+    counter ++;
+  }
+  // Check middle button
+  else if (middleButtonState == HIGH  && pressed == false) {
+    input[counter] = middleButtonPin;
+    pressed = true;
+    // Debuging output
+    Serial.print("Pin: ");
+    Serial.println(input[counter]);
+    counter ++;
+  }
+  // Check right button
+  else if (rightButtonState == HIGH  && pressed == false) {
+    input[counter] = rightButtonPin;
+    pressed = true;
+    // Debuging output
+    Serial.print("Pin: ");
+    Serial.println(input[counter]);
+    counter ++;
+  }
+
+  if ((leftButtonState == LOW && middleButtonState == LOW && rightButtonState == LOW)&& pressed == true){
+    pressed = false;
+  }
+
+  // Check if solved
+  solved = true;
+  for (int i = 0; i < 4; i++){
+    if (input[i] != answer[i])
+      solved = false;
+  }
+
+  if (solved)
+    digitalWrite(ledPin, HIGH);
+  else
+    digitalWrite(ledPin, LOW);
+
+ // Reset counter if over 4 presses
+  if (counter == 4)
+    counter = 0;
+}
 ```
 
 ## 4. Optional Homework
