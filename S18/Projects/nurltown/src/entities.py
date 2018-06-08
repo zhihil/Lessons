@@ -1,6 +1,8 @@
 import pygame as pg
 import config as cfg
 import random as rd
+import itertools as itt
+import numpy as np
 import math
 import colors
 
@@ -14,6 +16,7 @@ class Entity(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self)
 
         # Set the sprite for the entity
+        self.original_image = image
         self.image = image
 
         # Fetch the rectangle object that has the dimensions of the image
@@ -23,6 +26,12 @@ class Entity(pg.sprite.Sprite):
         # Set the initial position
         self.rect.x = init_x
         self.rect.y = init_y
+        self.shuffle_cycle = self.generate_shuffle_frames(cfg.NURLET_SHUFFLE_ANGLE)
+
+    def generate_shuffle_frames(self, max_deflection):
+        half_set = list(np.linspace(-1*max_deflection, max_deflection, 20))
+        full_set =  half_set[::-1]+ half_set
+        return itt.cycle(full_set)
 
     def distance_to(self, other):
         my = self.rect
@@ -38,6 +47,14 @@ class Entity(pg.sprite.Sprite):
         yhat = (its.y - my.y)/dist
         return xhat, yhat
 
+    def shuffle_sprite(self):
+        self.image = pg.transform.rotate(self.original_image, next(self.shuffle_cycle))
+
+    def move(self, x, y):
+        # self.image = pg.transform.rotate(self.original_image, rd.randint(-20, 20))
+        self.shuffle_sprite()
+        self.rect.move_ip(x, y)
+
 
 
 class Nurlet(Entity):
@@ -46,7 +63,8 @@ class Nurlet(Entity):
     """
     def __init__(self, init_x = 0, init_y = 0):
         # Load the image to represent the entity
-        sprite = pg.image.load("nurlet.png")
+        # sprite = pg.image.load("nurlet.png")
+        sprite = pg.image.load("supreme_leader3.png")
 
         # Call the parent class constructor
         super(Nurlet, self).__init__(sprite, init_x, init_y)
@@ -77,8 +95,6 @@ class Nurlet(Entity):
         pg.sprite.spritecollide(self, food, True)
 
 
-    def move(self, x, y):
-        self.rect.move_ip(x, y)
 
 
 class Food(Entity):
@@ -87,7 +103,8 @@ class Food(Entity):
     """
     def __init__(self, init_x = 0, init_y = 0):
         # Load the image to represent the entity
-        sprite = pg.image.load("jelly.png")
+        # sprite = pg.image.load("jelly.png")
+        sprite = pg.image.load("kimbap copy.png")
 
         # Call the parent class constructor
         super(Food, self).__init__(sprite, init_x, init_y)
