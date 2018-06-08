@@ -1,6 +1,7 @@
 # test_game.py
 
 import sys, pygame
+import random as rd
 pygame.init()
 
 size = width, height = 800, 600
@@ -19,11 +20,14 @@ while 1:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: sys.exit()
 
+    speed = [rd.randint(-50, 50), rd.randint(-50, 50)]
     ballrect = ballrect.move(speed)
-    if ballrect.left < 0 or ballrect.right > width:
-        speed[0] = -speed[0]
-    if ballrect.top < 0 or ballrect.bottom > height:
-        speed[1] = -speed[1]
+    ballrect.clamp_ip(screen.get_rect())
+
+    # if ballrect.left < 0 or ballrect.right > width:
+    #     speed[0] = -speed[0]
+    # if ballrect.top < 0 or ballrect.bottom > height:
+    #     speed[1] = -speed[1]
 
     # screen.fill(black)
     screen.blit(ball, ballrect)
