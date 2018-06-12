@@ -1,10 +1,8 @@
 import pygame as pg
 import config as cfg
-import random as rd
 import itertools as itt
 import numpy as np
 import math
-import colors
 
 class Entity(pg.sprite.Sprite):
     """
@@ -63,8 +61,8 @@ class Nurlet(Entity):
     """
     def __init__(self, init_x = 0, init_y = 0):
         # Load the image to represent the entity
-        # sprite = pg.image.load("nurlet.png")
-        sprite = pg.image.load("supreme_leader3.png")
+        sprite = pg.image.load("nurlet.png")
+        # sprite = pg.image.load("supreme_leader3.png")
 
         # Call the parent class constructor
         super(Nurlet, self).__init__(sprite, init_x, init_y)
@@ -103,8 +101,8 @@ class Food(Entity):
     """
     def __init__(self, init_x = 0, init_y = 0):
         # Load the image to represent the entity
-        # sprite = pg.image.load("jelly.png")
-        sprite = pg.image.load("kimbap copy.png")
+        sprite = pg.image.load("jelly.png")
+        # sprite = pg.image.load("kimbap copy.png")
 
         # Call the parent class constructor
         super(Food, self).__init__(sprite, init_x, init_y)
