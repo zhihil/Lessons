@@ -1,4 +1,7 @@
+---
 # Breathing Life Into Nurltown
+
+---
 
 In this tutorial, we will be creating the Nurltown ecosystem, and along the way, we will also be exloring the basics
 of game development using the Pygame platform. We will be creating a 2D game world, populating it with entities
@@ -20,7 +23,11 @@ When all is said and done, we expect our initial pass at the game to look someth
 
 ![Lesson 3 game teaser](../assets/images/reference/lesson_3_teaser.gif)
 
-## Setting up a game configuration file
+---
+## Setting up a game configuration files
+
+---
+
 We will begin by writing a configuration file for our game. As we are developing the game, we can expect to be tweaking 
 the look and behaviour of our game and the entities inside quite a bit! We would not want to be rooting through all of
 our files everytime we do that. So, it's generally a good development practice to store most of game configurations and
@@ -28,11 +35,15 @@ parameters in one centralized file that all other files import necessary values 
 
 In the root directory of your project, create a file called `config.py`. Here we will be storing our configurations.
  
-While you are at it, also create another file and name it `__init__.py`. This can stay blank, but the file like this needs
+While you are at it, create another file and name it `__init__.py`. This can stay blank, but a file with that name needs
 to exist in any directory we want python to recognize as an importable module. As we make new folders inside our root
-directory, we will continue to add `__init__.py` files in those folders as wel..
+directory, we will continue to add `__init__.py` files in those folders as well.
 
-### Writing `config.py`
+---
+### `config.py`
+
+---
+
 ```python
 """
 config.py
@@ -50,7 +61,7 @@ GAME_HEIGHT = 600
 NURLET_WIDTH = 50
 NURLET_HEIGHT = 50
 
-# The speed at which the nurlets travel (# pixels/frame)
+# The speed at which the nurlets travel (# of pixels/frame)
 NURLET_SPEED = 10
 
 # The maximum angle of deflection from origin during the shuffling animation
@@ -67,6 +78,26 @@ MAX_NUM_FOOD = 10
 You would be surprised how quickly you can forget why you used a particular value or wrote a bit of code just days ago.
 Writing meaningful comments not only guards against your human flaws, but it indicates good practice as a software
 developer to anyone inspecting your code (potential employers included 😉).
+
+
+We will also create another file in the root directory, and call it `colors.py`. This will be a file where we will
+oraganize all the color descriptions we will be using throughout the game.
+---
+### `colors.py` 
+
+---
+```python
+"""
+colors.py
+Module containing the standard descriptions of the colors used in Nurltown
+
+When the colors are described as a 3-element tuple, it is the RGB description, with
+each number representing the amount of intensity in the Red, Blue, Green channel, respectively
+"""
+
+red = 255, 0, 0
+black = 0, 0, 0
+```
 
 
 ![Under Construction](http://www.openheavenworshipcenter.com/wp-content/uploads/2017/07/Under-Construction-Sign-for-Locator.png)

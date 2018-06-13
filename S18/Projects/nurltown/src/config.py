@@ -14,7 +14,7 @@ GAME_HEIGHT = 600
 NURLET_WIDTH = 50
 NURLET_HEIGHT = 50
 
-# The speed at which the nurlets travel (# pixels/frame)
+# The speed at which the nurlets travel (# of pixels/frame)
 NURLET_SPEED = 10
 
 # The maximum angle of deflection from origin during the shuffling animation
