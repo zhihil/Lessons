@@ -20,11 +20,6 @@ When all is said and done, we expect our initial pass at the game to look someth
 
 ![Lesson 3 game teaser](../assets/images/reference/lesson_3_teaser.gif)
 
-```python
-import math
-
-```
-
 ## Setting up a game configuration file
 We will begin by writing a configuration file for our game. As we are developing the game, we can expect to be tweaking 
 the look and behaviour of our game and the entities inside quite a bit! We would not want to be rooting through all of
@@ -65,7 +60,7 @@ NURLET_SHUFFLE_ANGLE = 15
 MAX_NUM_FOOD = 10
 ```
 
-**NOTE:** As we are working through this project, I will highly recommend that you are diligent about following:
+**NOTE:** As we are working through this project, I will highly recommend that you are diligent about the following:
 1. Write short descriptions at the top of files outlining its purpose and any special notes about the contents
 2. Write meaningful comments beside sections of code about its purpose and justifications for any numbers or formulae used.
 
