@@ -6,3 +6,7 @@ venv/
 
 # Jupyter specific files
 .ipynb_checkpoints
+
+# Some data files
+S18/Projects/FacialRecognition/Session_3/data.npy
+S18/Projects/FacialRecognition/Session_3/data.tsv
