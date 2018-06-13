@@ -118,7 +118,7 @@ class Nurlet(Entity):
         """
 
         # Load the image to represent the entity
-        sprite = pg.image.load("nurlet.png")
+        sprite = pg.image.load("assets/sprites/nurlet.png")
         # sprite = pg.image.load("supreme_leader3.png")
 
         # Call the parent class constructor
@@ -185,7 +185,7 @@ class Food(Entity):
         """
 
         # Load the image to represent the entity
-        sprite = pg.image.load("jelly.png")
+        sprite = pg.image.load("assets/sprites/red_jelly.png")
         # sprite = pg.image.load("kimbap copy.png")
 
         # Call the parent class constructor
