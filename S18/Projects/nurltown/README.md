@@ -22,12 +22,12 @@ and **fight to the death.**
 | -        | 4      | May 23, 2018  | Introductions & Sign-ups                       |
 | 1        | 5      | May 30, 2018  | Intro to game design, tools & components, and installation of software |
 | 2        | 6      | June 6, 2018  | `-- OPTIONAL MEETUP (AHRAR UNAVAILABLE) --` |
-| -        | 7      | June 13, 2018 | `-- OPTIONAL MEETUP (HELL WEEK) --` |
-| 3        | 8      | June 20, 2018 | Explore pygame and begin building the ecosystem |
-| 4        | 9      | June 27, 2018 | -- |
-| 5        | 10     | July 4, 2018  | -- |
-| 6        | 11     | July 11, 2018 | -- |
-| 7        | 12     | July 18, 2018 | Catch-up and polishing time                    |
+| 3        | 7      | June 13, 2018 | Explore pygame and begin building the ecosystem |
+| 4        | 8      | June 20, 2018 | -- |
+| 5        | 9      | June 27, 2018 | -- |
+| 6        | 10     | July 4, 2018  | -- |
+| 7        | 11     | July 11, 2018 | -- |
+| 8        | 12     | July 18, 2018 | Catch-up and polishing time                    |
 | -        | 13     | July 25, 2018 | End of Term Event!                             |
 
 
@@ -46,7 +46,7 @@ and **fight to the death.**
 ## Installation
 
 For detailed instructions on how to install `python3` and `virtualenv`, read our
-[Python installation infosheet](https://github.com/UWCoffeeNCode/resources/wiki/Installing-Python).
+[**Python installation infosheet**](https://github.com/UWCoffeeNCode/resources/wiki/Installing-Python).
 
 ### Using Virtualenv
 
@@ -59,7 +59,13 @@ of the versions of the same package (pretty cool, huh?).
 
 To instantiate a virtual environment, navigate to the root directory for your project, and run
 
+##### For Mac/Linux users
+
     virtualenv -p python3 venv
+    
+##### For Windows users
+
+    virtualenv venv
 
 This command will create the necessary files (and installations) for a virtualenv that is going to called `venv`
 For this project, the instructions will be using this name for the virtualenv, but feel free to use any other name you wish,
@@ -72,9 +78,17 @@ you can simply delete this folder and start fresh. No harm, no foul!
 
 #### Activating your virtualenv
 
-To activate the virtualenv, navigate to the root directory for your project, and run
+To activate the virtualenv:
+
+##### For Mac/Linux users
+Navigate to the root directory for your project, and run
 
     source venv/bin/activate
+
+##### For Windows users
+Navigate to the root directory for your project, and run
+
+    venv\Scripts\activate
 
 When this command successfully runs, it is likely that you will see a change in your Command Line Interface (CLI, the terminal)
 For example, before activating the virtualenv, my CLI looked like:
@@ -121,7 +135,7 @@ having issues, feel free to reach out to one of the Coffee 'N Code execs for hel
 
 #### Exploring Pygame
 Once you have successfully installed the pygame package, you can learn the basics from the our 
-[pygame tutorial](https://github.com/UWCoffeeNCode/Lessons/blob/master/S18/Projects/nurltown/tutorials/creating_nurltown.md).
+[**pygame tutorial**](https://github.com/UWCoffeeNCode/Lessons/blob/master/S18/Projects/nurltown/tutorials/creating_nurltown.md).
 Specifically, I advise you to watch the video series referenced in the tutorial; it is a great resource to understand the
 process of creating the building blocks of a 2D game.
 

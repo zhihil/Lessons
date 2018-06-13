@@ -90,6 +90,15 @@ red = 255, 0, 0
 black = 0, 0, 0
 ```
 
+## Creating an ecosystem
+
+### Learning about Object-Oriented Programming (OOP)
+In order to code the bullding blocks of Nurltown, we will employ a method of programming called _Object-Oriented Programming_.
+Within this paradigm, we aim to model a set of logically coherent pieces of functionality under the classification of an _Object_.
+
+For instance, each of our nurlets may be considered an Object, and it will possess a set of functionality that you may expect 
+
+
 ---
 
 ![Under Construction](http://www.openheavenworshipcenter.com/wp-content/uploads/2017/07/Under-Construction-Sign-for-Locator.png)
