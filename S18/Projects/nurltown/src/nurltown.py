@@ -18,7 +18,6 @@ def main():
     2. Set the game configuration and utilities
     3. Populates the ecosystem with an initial collection of nurlets and food
     4. Continuously runs a loop of updating the states of the game entities and redrawing the game state
-    :return: None
     """
 
     width, height = cfg.GAME_WIDTH, cfg.GAME_HEIGHT
@@ -88,7 +87,6 @@ def screen_constraint_generator(screen):
         A function which contains a supplied sprite to be within a game display
         :param sprite: A game sprite
         :type sprite: pygame.sprite.Sprite
-        :return: None
         """
         sprite.rect.clamp_ip(screen.get_rect())
 
@@ -108,7 +106,7 @@ def random_pos_generator(screen):
         """
         A function which provides a random location within the bounds of a supplied screen
         :return: An (x, y) coordinate within the screen
-        :rtype: tuple
+        :rtype: tuple[int]
         """
 
         rect = screen.get_rect()
