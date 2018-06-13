@@ -1,4 +1,4 @@
-# Coffee 'N Code Sprint 2018 Project List
+# Coffee 'N Code Spring 2018 Project List
 
 ### Web development
 Learn the basics such HTML, CSS, Javascript, Jquery and Bootstrap to get you started on your personal portfolio website.

@@ -17,7 +17,7 @@ NURLET_HEIGHT = 50
 # The speed at which the nurlets travel (# pixels/frame)
 NURLET_SPEED = 10
 
-# THe maximum angle of deflection from origin during the shuffling animation
+# The maximum angle of deflection from origin during the shuffling animation
 NURLET_SHUFFLE_ANGLE = 15
 
 # The maximum number of food entities which can exist at once in the ecosystem
