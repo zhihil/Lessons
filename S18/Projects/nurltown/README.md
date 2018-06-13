@@ -121,7 +121,7 @@ having issues, feel free to reach out to one of the Coffee 'N Code execs for hel
 
 #### Exploring Pygame
 Once you have successfully installed the pygame package, you can learn the basics from the our 
-[pygame tutorial](https://github.com/UWCoffeeNCode/Lessons/blob/master/S18/Projects/nurltown/tutorials/exploring_pygame.ipynb).
+[pygame tutorial](https://github.com/UWCoffeeNCode/Lessons/blob/master/S18/Projects/nurltown/tutorials/creating_nurltown.md).
 Specifically, I advise you to watch the video series referenced in the tutorial; it is a great resource to understand the
 process of creating the building blocks of a 2D game.
 

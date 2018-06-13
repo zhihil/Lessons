@@ -1,7 +1,7 @@
 """
 config.py
 Module containing the configurations for the Nurltown ecosystem simulation
-These configurations contain global and default parameters that disctate
+These configurations contain global and default parameters that dictate
 the setup of the ecosystem and behaviors of the entities within, such as
 nurlets, food, and obstacles
 """
