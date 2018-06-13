@@ -1,4 +1,7 @@
-# nurltown.py
+"""
+nulrtown.py
+Module containing the insertion point into the Nurltown game, along with configurations and utilities
+"""
 
 
 # Importing external modules.
