@@ -1,7 +1,4 @@
----
 # Breathing Life Into Nurltown
-
----
 
 In this tutorial, we will be creating the Nurltown ecosystem, and along the way, we will also be exloring the basics
 of game development using the Pygame platform. We will be creating a 2D game world, populating it with entities
@@ -23,10 +20,7 @@ When all is said and done, we expect our initial pass at the game to look someth
 
 ![Lesson 3 game teaser](../assets/images/reference/lesson_3_teaser.gif)
 
----
 ## Setting up a game configuration files
-
----
 
 We will begin by writing a configuration file for our game. As we are developing the game, we can expect to be tweaking 
 the look and behaviour of our game and the entities inside quite a bit! We would not want to be rooting through all of
@@ -39,10 +33,7 @@ While you are at it, create another file and name it `__init__.py`. This can sta
 to exist in any directory we want python to recognize as an importable module. As we make new folders inside our root
 directory, we will continue to add `__init__.py` files in those folders as well.
 
----
 ### `config.py`
-
----
 
 ```python
 """
@@ -79,13 +70,13 @@ You would be surprised how quickly you can forget why you used a particular valu
 Writing meaningful comments not only guards against your human flaws, but it indicates good practice as a software
 developer to anyone inspecting your code (potential employers included 😉).
 
+---
 
 We will also create another file in the root directory, and call it `colors.py`. This will be a file where we will
-oraganize all the color descriptions we will be using throughout the game.
----
+organize all the color descriptions we will be using throughout the game.
+
 ### `colors.py` 
 
----
 ```python
 """
 colors.py
@@ -99,6 +90,7 @@ red = 255, 0, 0
 black = 0, 0, 0
 ```
 
+---
 
 ![Under Construction](http://www.openheavenworshipcenter.com/wp-content/uploads/2017/07/Under-Construction-Sign-for-Locator.png)
 
