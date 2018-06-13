@@ -3,7 +3,6 @@ nulrtown.py
 Module containing the insertion point into the Nurltown game, along with configurations and utilities
 """
 
-
 # Importing external modules.
 # Some of the statements have the form 'import [THIS] as [THAT]', which just allows as to use
 # a shorter alias (alternate name to target the module) to reduce the amount we have to type
