@@ -5,7 +5,9 @@
 ## 1. Downloads
 * [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 
-* [Arduino Simulator](https://www.sites.google.com/site/unoardusim/services)
+* [Arduino Simulator for Web](https://www.tinkercad.com/circuits)
+**OR**
+[Arduino Simulator for Windows](https://www.sites.google.com/site/unoardusim/services)
 
 ## 2. The Security Box Project
 * Use an Arduino microcontroller, actuators, and sensors to create a security system to lock a box.
@@ -17,10 +19,12 @@ Using the Arduino Simulator create a program that will flash an LED.
 *Solution*
 
 ```c++
-// ensure the LED is connected to pin 7
+// ensure the LED is connected to pin 7.
+
+// The setup function runs one time only.
 void setup()
 {
-  // initialize digital pin LED_BUILTIN as an output.
+  // initialize digital pin #7 as an output.
   pinMode(7, OUTPUT);
 }
 

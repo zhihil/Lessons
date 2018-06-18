@@ -1,14 +1,20 @@
 # Arduino Security System Hardware Project
 
-Build, from scratch, a secure box powered by your very own Arduino security system.
+Build, from scratch, a secure box powered by your very own Arduino security system.  No need to bring your own hardware as Coffee ‘N Code will lend you kit.
 
+## Objective
 * Learn to read circuit schematics
 * Design a complex electronic system
 * Use general purpose input/output to control an Arduino
-* No need to bring your own hardware as Coffee ‘N Code will lend you kit.
 
+## Tools and Technologies
+* [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+* [Arduino Simulator for Web](https://www.tinkercad.com/circuits)
+**OR**
+[Arduino Simulator for Windows](https://www.sites.google.com/site/unoardusim/services)
+* [Arduino Code support](https://www.arduino.cc/en/Tutorial/BuiltInExamples)
 
-## Tentative "Syllabus"
+## Syllabus
 | Lesson # | Week # | Date          | Description                                           |
 | -------- | ------ | ------------- | ------------------------------------------------------|
 | -        | 4      | May 23, 2018  | Introductions & sign-ups                              |
