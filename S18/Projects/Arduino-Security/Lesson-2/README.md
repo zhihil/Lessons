@@ -25,9 +25,9 @@ const int buttonPin = 2;     // the number of the pushbutton pin
 const int ledPin =  12;      // the number of the LED pin
 
 int buttonState = 0;         // variable for reading the pushbutton status
-int timeOfPress = 0;
-int differenceOfPresses = 0;
-int score = 0;
+int timeOfPress = 0;         // variable to keep track of when the button was pressed.
+int differenceOfPresses = 0; // the time between two presses
+int score = 0;               // how many presses has the users gotten with 1 second in a row.
 bool pressed = false; // Used so you only read the buttonState once per push
 
 void setup() {
@@ -45,21 +45,26 @@ void loop() {
   // read the state of the pushbutton value:
   buttonState = digitalRead(buttonPin);
 
+  // if the buttonState is true and the button was not previously being pressed.
   if (buttonState == HIGH && pressed == false) {
+    // Save the time between this button press and the previous button press.
     differenceOfPresses = millis () - timeOfPress;
+    // Save the current time as the new previous button press.
     timeOfPress = millis ();
-    // If your press is within .2 seconds of 1 second then it counts
+    // If your press is within .2 seconds of 1 second then it counts towards your score.
     if (differenceOfPresses < 1200 && differenceOfPresses > 800)
       score++;
     // If your press is off then reset the score
     else
       score = 0;
+    // You are now pressing the button.
     pressed = true;
     // Debuging output
     Serial.print("Difference: ");
     Serial.println(differenceOfPresses);
   }
 
+  // If the buttonState is false, and the button was just being pressed then that means the button is no longer being pressed.
   if (buttonState == LOW && pressed == true){
     pressed = false;
   }
