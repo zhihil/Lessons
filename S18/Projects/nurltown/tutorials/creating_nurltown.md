@@ -90,6 +90,15 @@ red = 255, 0, 0
 black = 0, 0, 0
 ```
 
+## Building the ecosystem
+
+With the configuration files set up, we will now turn out attention to writing the script file `nurltown.py`, which will:
+* serve as the entry point to our game (the program to run to start the game)
+* manage the game loop
+
+
+
+
 ---
 
 ![Under Construction](http://www.openheavenworshipcenter.com/wp-content/uploads/2017/07/Under-Construction-Sign-for-Locator.png)
