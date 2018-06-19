@@ -102,7 +102,7 @@ black = 0, 0, 0
 
 ## Building the ecosystem
 
-With the configuration files set up, we will now turn out attention to writing the script file `nurltown.py`, which will:
+With the configuration files set up, we will now turn our attention to writing the script file `nurltown.py`, which will:
 * serve as the entry point to our game (the program to run to start the game)
 * run the [game loop](https://github.com/UWCoffeeNCode/Lessons/blob/master/S18/Projects/nurltown/tutorials/glossary.md#game-loop)
 
