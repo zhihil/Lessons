@@ -22,9 +22,9 @@ and **fight to the death.**
 | -        | 4      | May 23, 2018  | Introductions & Sign-ups                       |
 | 1        | 5      | May 30, 2018  | Intro to game design, tools & components, and installation of software |
 | 2        | 6      | June 6, 2018  | `-- OPTIONAL MEETUP (AHRAR UNAVAILABLE) --` |
-| 3        | 7      | June 13, 2018 | Explore pygame and begin building the ecosystem |
-| 4        | 8      | June 20, 2018 | -- |
-| 5        | 9      | June 27, 2018 | -- |
+| 3        | 7      | June 13, 2018 | Finish installation; learn about object oriented programming  |
+| 3        | 8      | June 20, 2018 | Work through Pygame tutorial; code the ecosystem and entities  |
+| 4        | 9      | June 27, 2018 | -- | 
 | 6        | 10     | July 4, 2018  | -- |
 | 7        | 11     | July 11, 2018 | -- |
 | 8        | 12     | July 18, 2018 | Catch-up and polishing time                    |
