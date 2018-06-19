@@ -17,3 +17,16 @@ the current score is perhaps updated.
 
 ![The game loop](http://openbookproject.net/thinkcs/python/english3e/_images/pygame_structure.png)
 
+### Module
+Simply put, a module is a file consisting of Python code (can be other programming languages, as well).
+A module usually is a collection of variables, functions, and class definitions, which are used for common or coherent
+purposes. The are organized in a file together so they can be imported (brought into your work), as needed, in multiple
+locations.
+
+**NOTE:** When programming in python, for a `.py` file to be considered a module, the directory (folder) containining that
+file must also containa file named `__init__.py`.
+
+### Root Directory
+
+The root directory is the first or top-most directory in a hierarchy. When someone refers to the
+*root directory of a project*, they mean the folder which contains all the files and folders of a project.

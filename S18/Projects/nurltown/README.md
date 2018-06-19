@@ -16,6 +16,10 @@ and **fight to the death.**
 * pyGame library for game development
 * our very own custom NEAT implementation
 
+## Glossary
+You can find the glossary of terms used throughout this project
+[here](https://github.com/UWCoffeeNCode/Lessons/blob/master/S18/Projects/nurltown/tutorials/glossary.md).
+
 ## Tentative Syllabus
 | Lesson # | Week # | Date          | Description                                    |
 | :------- | ------ | ------------- | ---------------------------------------------- |

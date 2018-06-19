@@ -33,6 +33,16 @@ While you are at it, create another file and name it `__init__.py`. This can sta
 to exist in any directory we want python to recognize as an importable module. As we make new folders inside our root
 directory, we will continue to add `__init__.py` files in those folders as well.
 
+### A comment on commenting
+In a python script file, anything following a `#` character in the same line is considered a *comment*. This is used
+to describe code blocks, and meaningful reasoning behind your code.
+
+Similarly, any text between triple quotes (`"""`), no matter how many lines, is also considered a comment.
+This form is usually used for more formal documentation of functions, classes, and scripts. 
+
+Comments are not required for a program to run (they are actually ignored by the interpreter) and are merely for the
+benefit of humans. That said, I strongly urge you to write your own meaningful comments when you are creating these files.
+
 ### `config.py`
 
 ```python
@@ -95,6 +105,29 @@ black = 0, 0, 0
 With the configuration files set up, we will now turn out attention to writing the script file `nurltown.py`, which will:
 * serve as the entry point to our game (the program to run to start the game)
 * run the [game loop](https://github.com/UWCoffeeNCode/Lessons/blob/master/S18/Projects/nurltown/tutorials/glossary.md#game-loop)
+
+Navigate to the root directory and create a file with the name `nurltown.py`. Begin by declaring the module imports
+
+### `nurltown.py`
+```python
+"""
+nulrtown.py
+Module containing the insertion point into the Nurltown game, along with configurations and utilities
+"""
+
+# Importing external modules.
+# Some of the statements have the form 'import [THIS] as [THAT]', which just allows as to use
+# a shorter alias (alternate name to target the module) to reduce the amount we have to type
+import sys                      # Allows access to information about the computer, its filesystem, etc
+import pygame as pg             # The Pygame module
+import config as cfg            # The configuration file containing parameters about the game
+import entities as ntts         # Module containing the classes for the objects that will populate the game
+import random as rd             # Module which has useful functions involving random numbers
+import colors                   # Imports variables describing colors
+
+```
+
+
 
 ### Learning about Object-Oriented Programming (OOP)
 In order to code the bullding blocks of Nurltown, we will employ a method of programming called _Object-Oriented Programming_.
