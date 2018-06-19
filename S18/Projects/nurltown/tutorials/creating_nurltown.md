@@ -94,7 +94,7 @@ black = 0, 0, 0
 
 With the configuration files set up, we will now turn out attention to writing the script file `nurltown.py`, which will:
 * serve as the entry point to our game (the program to run to start the game)
-* manage the game loop
+* run the [game loop](https://github.com/UWCoffeeNCode/Lessons/blob/master/S18/Projects/nurltown/tutorials/glossary.md#game-loop)
 
 ### Learning about Object-Oriented Programming (OOP)
 In order to code the bullding blocks of Nurltown, we will employ a method of programming called _Object-Oriented Programming_.
