@@ -141,7 +141,6 @@ Module containing the insertion point into the Nurltown game, along with configu
 import sys                      # Allows access to information about the computer, its filesystem, etc
 import pygame as pg             # The Pygame module
 import config as cfg            # The configuration file containing parameters about the game
-import entities as ntts         # Module containing the classes for the objects that will populate the game
 import random as rd             # Module which has useful functions involving random numbers
 import colors                   # Imports variables describing colors
 
