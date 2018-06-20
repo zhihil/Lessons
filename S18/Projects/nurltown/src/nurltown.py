@@ -22,11 +22,16 @@ def main():
     4. Continuously runs a loop of updating the states of the game entities and redrawing the game state
     """
 
-    width, height = cfg.GAME_WIDTH, cfg.GAME_HEIGHT
+    width, height = cfg.GAME_WIDTH, cfg.GAME_HEIGHT     # import the game dimensions from the configuration file
 
-    pg.init()
+    pg.init()       # initialize the pygame module
+    pg.font.init()  # initialize the font library
 
-    screen = pg.display.set_mode((width, height))
+    # Create a text object to test the game loop
+    test_font = pg.font.SysFont('Helvetica', 30)
+    test_text = test_font.render('GAME DEVELOPMENT IN PROGRESS...', False, (255, 0, 0))
+
+    screen = pg.display.set_mode((width, height))       # create a display object representing the game screen
     constrain_within_screen = screen_constraint_generator(screen)
     get_random_pos = random_pos_generator(screen)
 
@@ -70,6 +75,9 @@ def main():
             for sprite in group.sprites():
                 constrain_within_screen(sprite)
             group.draw(screen)
+
+        # Display test text
+        screen.blit(test_text, (180, 500))
 
         pg.display.update()
 
@@ -120,6 +128,7 @@ def random_pos_generator(screen):
     return generated_func
 
 
+# Make sure this always stays at the end of the file
 # This code block ensures that the main() function (the entry point to the game) only runs if this script
 # file is run directly, and not imported as a module.
 if __name__ == "__main__":

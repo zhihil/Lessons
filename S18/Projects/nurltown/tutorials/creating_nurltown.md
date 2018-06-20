@@ -100,6 +100,26 @@ red = 255, 0, 0
 black = 0, 0, 0
 ```
 
+
+## Primer on Python
+As we proceed with the Nurltown tutorial, we going to be writing some code which assumes you have a working knowledge of
+the python programming language. Specifically, we will be making use of the following concepts:
+* arrays
+* functions
+* for-loops and list comprehensions
+* while-loops
+* classes
+
+If you are not familiar with any of these concepts, I highly recommend you gain a basic understanding before proceeding
+with the tutorial.
+ 
+A great resource on python fundamentals is the
+[**W3 Schools python tutorials**](https://www.w3schools.com/python/python_syntax.asp).  
+For a more thorough look into Python classes and objects, watch
+[**this video**](https://www.youtube.com/watch?v=apACNr7DC_s&index=2&t=2s&list=FLyURi69vc6vuSQ94cpE_sSA).
+
+
+
 ## Building the ecosystem
 
 With the configuration files set up, we will now turn our attention to writing the script file `nurltown.py`, which will:
@@ -127,13 +147,105 @@ import colors                   # Imports variables describing colors
 
 ```
 
+Next, we will write a `main()` function. This function will be the entry-point into our game, and will be the function
+which will be called when we run the `nurltown.py` python script (this file).
 
+```python
+def main():
+    """
+    This is the entry point in to the Nurltown ecosystem simulator. The function does the following:
+    1. Instantiates a Pygame session
+    2. Set the game configuration and utilities
+    3. Populates the ecosystem with an initial collection of nurlets and food
+    4. Continuously runs a loop of updating the states of the game entities and redrawing the game state
+    """
+    pass
+    
 
-### Learning about Object-Oriented Programming (OOP)
-In order to code the bullding blocks of Nurltown, we will employ a method of programming called _Object-Oriented Programming_.
-Within this paradigm, we aim to model a set of logically coherent pieces of functionality under the classification of an _Object_.
+# Make sure this always stays at the end of the file
+# This code block ensures that the main() function (the entry point to the game) only runs if this script
+# file is run directly, and not imported as a module.
+if __name__ == "__main__":
+    main()
 
-For instance, each of our nurlets may be considered an Object, and it will possess a set of functionality that you may expect 
+```
+
+#### Instantiate the game
+
+Inside `main()` we start putting in the code to instantiate the game. This means deleting the `pass` statement inside the
+function (you can keep the comments, if you wish) and writing the following code.
+
+**NOTE:** The `...` in the snippet is not actually functional code. It merely represents things that may already
+exist in the function (in this case, the documentation). This notation indicates that the snippet is to added to the function
+after existing code.  
+**Do not copy `...` into your file**
+
+```python
+def main():
+    ...
+    
+    width, height = cfg.GAME_WIDTH, cfg.GAME_HEIGHT     # import the game dimensions from the configuration file
+    pg.init()       # initialize the pygame module
+    pg.font.init()  # initialize the font library
+    
+    # Create a text object to test the game loop
+    test_font = pg.font.SysFont('Helvetica', 30)
+    test_text = test_font.render('GAME DEVELOPMENT IN PROGRESS...', False, (255, 0, 0))
+    
+    screen = pg.display.set_mode((width, height))       # create a display object representing the game screen
+
+```
+
+#### The game loop
+
+Next, we are going to tackle the meat of game engine: _the game loop_. In essense, this will be a while-loop within out
+`main()` function, which runs continously until the user wants to exit the game. Inside this while loop, we will be writing
+the code to listen to user input, update the game state, and redraw the game.
+
+```python
+def main():
+    ...
+    
+    while True:
+    
+        # Handle the events that the game instance encounters
+        # Events can be mouse movements/clicks, key presses, window resizing, joystick use, etc.
+        # You can read more about the supported event types here:
+        # https://www.pg.org/docs/ref/event.html
+        for event in pg.event.get():
+
+            # Quit the game and program when the 'x' button on the window is pressed
+            if event.type == pg.QUIT: sys.exit()
+            # Adds a quick way to exit the game by press the ';' button
+            if event.type == pg.KEYDOWN and event.key == pg.K_SEMICOLON: sys.exit()
+
+        # Clear the screen
+        screen.fill(colors.black)
+        
+        # Display test text
+        screen.blit(test_text, (180, 500))
+
+        pg.display.update()
+```
+
+#### Test the game screen!
+
+Open up your terminal (Mac/Linux) or command prompt (Windows), navigate to the root directory of the project, and run:
+
+**NOTE:** Remember to turn on your virtual environment!
+##### For Mac/Linux users
+    python3 nurltown.py
+    
+##### For Windows users 
+    python nurltown.py
+or
+
+    py nurltown.py
+
+Now, if everything was done according to the plan (fingers crossed!), we should be able to run the script and see the
+game screen!
+
+![Game screen test](../assets/images/reference/game_screen_test.png)
 
 
 ---
