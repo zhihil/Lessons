@@ -2,6 +2,14 @@
 
 **Objective**: use JS HTML DOM and what that means and how to use jQuery
 
+## 6. OPTIONAL: Intro to JavaScript (30m)
+- [ ] linking a JavaScript file to an HTML file
+- [ ] printing
+- [ ] variables
+- [ ] if-statements & flow charts
+- [ ] loops
+- [ ] functions
+
 ## 1. JS HTML DOM
 - [ ] DOM definition & significance
 
