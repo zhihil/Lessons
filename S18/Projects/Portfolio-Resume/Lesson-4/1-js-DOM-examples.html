@@ -37,18 +37,24 @@
 		</div>
 
 		<h2 id="alert">click me to read an alert!</h2>
+		
+		<div id="education">
+			<h1>Education:</h1>
+			<p id="removepls">this should be removed</p>
+			<p id="replacepls">this should be replaced</p>
+		</div>
+		
+		<h2>button count:</h2>
+		<p id="btncount"></p>
 
 		<!-- script>
 			// 1. HTML DOM is a standard of adding, removing, and changing HTML elements; we can achieve this with JavaScript to make dynamic HTML
 			// 2. properties are values that developers can get or set (eg. innerHTML)
 			// 3. methods are actions that developers can do (eg. getElementById)
 			document.getElementById("name").innerHTML = "Ahrar";
-
 			// innerHTML is one of the easiest ways to access the content of an element
 			// getElementById is one of the most common ways to access a desired element
-
 			// 4. the HTML DOM document object represents your web page, so if you want to access any element in an HTML page, you always have to start with accessing the document object
-
 			// 5. there are multiple ways to find HTML elements
 			// 5a. by id
 			document.getElementById("name");
@@ -94,11 +100,27 @@
 				element.innerHTML = "mouse over me";
 			}
 			// 11. adding event listeners
-				document.getElementById("alert").addEventListener("click", function{
-						alert("Alert Message");
-				});
-			// 12. DOM nodes and nivation
-			// 13. DOM collection vs node lists
+			document.getElementById("alert").addEventListener("click", function(){
+					alert("Alert Message");
+			});
+			// 12. DOM nodes and navigation
+			// possibly the most "extra" way of adding a paragraph in HTML ._.
+			var element = document.getElementById("education");
+			var paragraph = document.createElement("p");
+			var text = document.createTextNode("Waterloo");
+			paragraph.appendChild(text);
+			element.appendChild(paragraph);
+			
+			// https://www.w3schools.com/js/js_htmldom_navigation.asp
+			
+			// removing elements
+			var toRemove = document.getElementById("removepls");
+			element.removeChild(toRemove);
+			// 13. DOM collection vs node lists (there are subtle differences)
+			// HTML collections are similar to arrays, but are not actually arrays, thus cannot use array methods on HTMl collections
+			var collection = document.getElementsByTagName("button");
+			document.getElementById("btncount").innerHTML = collection.length;
+			
 		</script>
 	</body>
 </html>
