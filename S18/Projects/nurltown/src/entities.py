@@ -129,15 +129,35 @@ class Nurlet(Entity):
         # Set the movement speed
         self.speed = cfg.NURLET_SPEED
 
-    def update(self, food):
+    def update(self, food, key_input):
         """
         Function to update the state of the Nurlet. This update phase determines whether the Nurlet
         moves, eats, attacks, or defends, based on its surroundings and the rest of the game state
         :param food: A group of food entities that currently exist in the game
         :type food: pygame.sprite.Group
+        :param key_input: A sequence of boolean values indicating which keys are pressed
+        :type key_input: dict
         """
-        self.seek_closest(food)
+
+        # self.seek_closest(food)
+        self.move_by_user(key_input)
         self.eat_nearby(food)
+
+    def move_by_user(self, key_input):
+        """
+        Function to update the position of the nurlet according to a movement instructed by the user.
+        :param events: A list of events that occurred during the current of the game loop
+        :type events: pygame.event.EventList
+        """
+        dx = 0
+        dy = 0
+
+        if key_input[pg.K_UP]: dy -= 1
+        if key_input[pg.K_DOWN]: dy += 1
+        if key_input[pg.K_LEFT]: dx -= 1
+        if key_input[pg.K_RIGHT]: dx += 1
+        x, y = [self.speed * dp for dp in [dx, dy]]
+        self.move(x, y)
 
     def seek_closest(self, group):
         """
@@ -170,6 +190,41 @@ class Nurlet(Entity):
         """
         pg.sprite.spritecollide(self, food, True)
 
+class HostileNurlet(Nurlet):
+    """
+    Class representing the hostile inhabitant of Nurltown.
+    """
+    def __init__(self, init_x = 0, init_y = 0):
+        """
+        Constructor function for the Nurlet class
+        :param init_x: x coordinate of the initial position in the game
+        :type init_x: float
+        :param init_y: y coordinate of the initial position in the game
+        :type init_y: float
+        """
+
+        # Load the image to represent the entity
+        sprite = pg.image.load("assets/sprites/hostile_nurlet.png")
+        sprite = pg.transform.scale(sprite, (80, 80))
+
+        # Call the parent class constructor
+        super(HostileNurlet, self).__init__(init_x, init_y)
+
+        self.original_image = sprite
+        self.image = sprite
+
+    def update(self, food):
+        """
+        Function to update the state of the Nurlet. This update phase determines whether the Nurlet
+        moves, eats, attacks, or defends, based on its surroundings and the rest of the game state
+        :param food: A group of food entities that currently exist in the game
+        :type food: pygame.sprite.Group
+        :param key_input: A sequence of boolean values indicating which keys are pressed
+        :type key_input: dict
+        """
+
+        self.seek_closest(food)
+        self.eat_nearby(food)
 
 
 

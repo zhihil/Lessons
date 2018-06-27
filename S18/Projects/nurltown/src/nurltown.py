@@ -36,14 +36,17 @@ def main():
     get_random_pos = random_pos_generator(screen)
 
     nurlets = pg.sprite.Group()
+    hostiles = pg.sprite.Group()
     food = pg.sprite.Group()
 
     nurlet = ntts.Nurlet(width/2, height/2)
+    hostile_nurlets = [ntts.HostileNurlet(*get_random_pos()) for x in range(2)]
     jellies = [ntts.Food(*get_random_pos()) for x in range(cfg.MAX_NUM_FOOD)]
 
-    entity_groups = [food, nurlets]
+    entity_groups = [food, nurlets, hostiles]
 
     nurlets.add(nurlet)
+    hostiles.add(hostile_nurlets)
     food.add(jellies)
 
     while True:
@@ -52,7 +55,9 @@ def main():
         # Events can be mouse movements/clicks, key presses, window resizing, joystick use, etc.
         # You can read more about the supported event types here:
         # https://www.pg.org/docs/ref/event.html
-        for event in pg.event.get():
+        events = pg.event.get()
+        keys_pressed = pg.key.get_pressed()
+        for event in events:
 
             # Quit the game and program when the 'x' button on the window is pressed
             if event.type == pg.QUIT: sys.exit()
@@ -63,7 +68,10 @@ def main():
         screen.fill(colors.black)
 
         # Update the nurlets
-        nurlets.update(food)
+        nurlets.update(food, keys_pressed)
+
+        # Update the hostiles
+        hostiles.update(food)
 
         # Replenish food
         num_to_respawn = max(0, cfg.MAX_NUM_FOOD - len(food))
