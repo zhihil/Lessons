@@ -22,15 +22,15 @@
 - [ ] adding event listeners
 - [ ] types of DOM nodes (document, element, text, attribute, comment)
 - [ ] navigating between nodes
-- [ ] node collection vs node lists
+- [ ] *node collection vs node lists
 
 ## 3. jQuery
 - [ ] installation
 - [ ] jQuery definition & significance
 - [ ] general syntax
 - [ ] effects and animations
-- [ ] HTML/CSS DOM manipulation
-- [ ] DOM traversals
+- [ ] *HTML/CSS DOM manipulation
+- [ ] *DOM traversals
 
 ## 4. Task
 - [ ] add jQuery effects and animations to imitation site
