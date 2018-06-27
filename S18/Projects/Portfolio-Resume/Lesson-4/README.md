@@ -27,7 +27,10 @@
 ## 3. jQuery
 - [ ] installation
 - [ ] jQuery definition & significance
-- [ ] image/shape animations
+- [ ] general syntax
+- [ ] effects and animations
+- [ ] HTML/CSS DOM manipulation
+- [ ] DOM traversals
 
 ## 4. Task
 - [ ] add jQuery effects and animations to imitation site
