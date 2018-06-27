@@ -11,6 +11,18 @@
 
 ## 2. JS HTML DOM
 - [ ] DOM definition & significance
+- [ ] objects, properties, methods
+- [ ] document object
+- [ ] finding HTML elements (by id, tag name, or class name)
+- [ ] giving buttons functionality
+- [ ] changing HTML content
+- [ ] changing HTML attributes
+- [ ] changing CSS properties and values
+- [ ] mouse events
+- [ ] adding event listeners
+- [ ] types of DOM nodes (document, element, text, attribute, comment)
+- [ ] navigating between nodes
+- [ ] node collection vs node lists
 
 ## 3. jQuery
 - [ ] installation
