@@ -41,21 +41,7 @@ class Entity(pg.sprite.Sprite):
         self.rect.x = init_x
         self.rect.y = init_y
 
-        # Set up a generator to yield subsequent pygame.Surfaces that will make up the shuffling
-        # animation of the Entity
-        self.shuffle_cycle = self.generate_shuffle_frames(cfg.NURLET_SHUFFLE_ANGLE)
 
-    def generate_shuffle_frames(self, max_deflection):
-        """
-        Function to create an iterator for the rotation angle per frame of the shuffling animation of the entity
-        :param max_deflection: The maximum angle to which the entity's image rotates
-        :type max_deflection: float
-        :return: An iterator which yields the deflection angle of the subsequent frame in the shuffling animation
-        :rtype: iterator
-        """
-        half_set = list(np.linspace(-1*max_deflection, max_deflection, 20))
-        full_set =  half_set[::-1]+ half_set
-        return itt.cycle(full_set)
 
     def distance_to(self, other):
         """
@@ -86,6 +72,31 @@ class Entity(pg.sprite.Sprite):
         yhat = (its.y - my.y)/dist
         return xhat, yhat
 
+
+class MobileEntity(Entity):
+    """
+    Constructor function for the MobileEntity class
+    """
+    def __init__(self, *args, **kwargs):
+
+        super().__init__(*args, **kwargs)
+
+        # Set up a generator to yield subsequent pygame.Surfaces that will make up the shuffling
+        # animation of the Entity
+        self.shuffle_cycle = self.generate_shuffle_frames(cfg.NURLET_SHUFFLE_ANGLE)
+
+    def generate_shuffle_frames(self, max_deflection):
+        """
+        Function to create an iterator for the rotation angle per frame of the shuffling animation of the entity
+        :param max_deflection: The maximum angle to which the entity's image rotates
+        :type max_deflection: float
+        :return: An iterator which yields the deflection angle of the subsequent frame in the shuffling animation
+        :rtype: iterator
+        """
+        half_set = list(np.linspace(-1*max_deflection, max_deflection, 20))
+        full_set =  half_set[::-1]+ half_set
+        return itt.cycle(full_set)
+
     def shuffle_sprite(self):
         """
         Rotates the image of the entity by a set angle, representing the next frame of the shuffling animation
@@ -104,7 +115,7 @@ class Entity(pg.sprite.Sprite):
         self.rect.move_ip(x, y)                 # Move the bounding box of the entity
 
 
-class Nurlet(Entity):
+class Nurlet(MobileEntity):
     """
     Class representing the inhabitant of Nurltown.
     """
@@ -126,6 +137,7 @@ class Nurlet(Entity):
 
         # Set the movement speed
         self.speed = cfg.NURLET_SPEED
+        self.hp = cfg.NURLET_MAX_HP
 
     def update(self, food, key_input):
         """
@@ -188,6 +200,7 @@ class Nurlet(Entity):
         """
         pg.sprite.spritecollide(self, food, True)
 
+
 class HostileNurlet(Nurlet):
     """
     Class representing the hostile inhabitant of Nurltown.
@@ -201,12 +214,13 @@ class HostileNurlet(Nurlet):
         :type init_y: float
         """
 
-        # Load the image to represent the entity
-        sprite = pg.image.load("assets/sprites/hostile_nurlet.png")
-        sprite = pg.transform.scale(sprite, (80, 80))
-
         # Call the parent class constructor
         super().__init__(init_x, init_y)
+
+
+        # Load the image to represent the entity and override the Nurlet sprite
+        sprite = pg.image.load("assets/sprites/hostile_nurlet.png")
+        sprite = pg.transform.scale(sprite, (80, 80))
 
         self.original_image = sprite
         self.image = sprite
@@ -223,7 +237,6 @@ class HostileNurlet(Nurlet):
 
         self.seek_closest(food)
         self.eat_nearby(food)
-
 
 
 class Food(Entity):

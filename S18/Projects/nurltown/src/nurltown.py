@@ -90,6 +90,7 @@ def main():
         pg.display.update()
 
 
+
 def screen_constraint_generator(screen):
     """
     A generator function which produces a function which accepts a sprite and constraints it within the
