@@ -42,7 +42,7 @@ class Entity(pg.sprite.Sprite):
         self.rect.y = init_y
 
         # Set up a generator to yield subsequent pygame.Surfaces that will make up the shuffling
-        # animation of the Entitb
+        # animation of the Entity
         self.shuffle_cycle = self.generate_shuffle_frames(cfg.NURLET_SHUFFLE_ANGLE)
 
     def generate_shuffle_frames(self, max_deflection):
