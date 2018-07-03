@@ -27,7 +27,7 @@ class Entity(pg.sprite.Sprite):
         """
 
         # Call the parent class (Sprite) constructor
-        pg.sprite.Sprite.__init__(self)
+        super().__init__()
 
         # Set the sprite for the entity. Save a copy of the original image as a reference
         self.original_image = image
@@ -119,12 +119,10 @@ class Nurlet(Entity):
 
         # Load the image to represent the entity
         sprite = pg.image.load("assets/sprites/pug.png")
-        # sprite = pg.image.load("assets/sprites/nurlet.png")
         sprite = pg.transform.scale(sprite, (80, 80))
-        # sprite = pg.image.load("supreme_leader3.png")
 
         # Call the parent class constructor
-        super(Nurlet, self).__init__(sprite, init_x, init_y)
+        super().__init__(sprite, init_x, init_y)
 
         # Set the movement speed
         self.speed = cfg.NURLET_SPEED
@@ -208,7 +206,7 @@ class HostileNurlet(Nurlet):
         sprite = pg.transform.scale(sprite, (80, 80))
 
         # Call the parent class constructor
-        super(HostileNurlet, self).__init__(init_x, init_y)
+        super().__init__(init_x, init_y)
 
         self.original_image = sprite
         self.image = sprite
@@ -243,9 +241,7 @@ class Food(Entity):
 
         # Load the image to represent the entity
         sprite = pg.image.load("assets/sprites/bone.png")
-        # sprite = pg.image.load("assets/sprites/red_jelly.png")
-        # sprite = pg.image.load("kimbap copy.png")
 
         # Call the parent class constructor
-        super(Food, self).__init__(sprite, init_x, init_y)
+        super().__init__(sprite, init_x, init_y)
 
