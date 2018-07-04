@@ -135,7 +135,7 @@ class Nurlet(MobileEntity):
         # Call the parent class constructor
         super().__init__(sprite, init_x, init_y)
 
-        # Set the movement speed
+        # Set the movement speed and initial hp
         self.speed = cfg.NURLET_SPEED
         self.hp = cfg.NURLET_MAX_HP
 
@@ -224,6 +224,7 @@ class HostileNurlet(Nurlet):
 
         self.original_image = sprite
         self.image = sprite
+        self.speed = cfg.HOSTILE_NURLET_SPEED
 
     def update(self, food):
         """

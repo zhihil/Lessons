@@ -87,7 +87,41 @@ def main():
         # Display test text
         screen.blit(test_text, (180, 500))
 
+        # Display the health bar
+        draw_health_bar(screen, nurlet.hp)
+
         pg.display.update()
+
+def draw_health_bar(screen, cur_hp, max_hp=100):
+    """
+    A function which draws the health bar with the current HP of the nurlet on the screen
+    :param screen: A game screen
+    :type screen: pygame.Surface
+    :param cur_hp: The current hp of the nurlet
+    :type cur_hp: float
+    :param max_hp: The maximum hp of the nurlet
+    :type max_hp: float
+    """
+
+    # Set up variables which define the dimensions of the health bar
+    health_bar_pos = (25, 50)
+    health_bar_width = 300
+    health_bar_height = 50
+
+    cur_hp_width = cur_hp / (max_hp) * health_bar_width
+
+    # Set up the title text
+    font = pg.font.SysFont('Marker Felt Wide', 30, True)
+    title = font.render('HEALTH', False, (255, 255, 255))
+
+    # Display title
+    screen.blit(title, (25, 25))
+
+    # Display the background color of the health bar
+    pg.draw.rect(screen, colors.red, (*health_bar_pos, health_bar_width, health_bar_height))
+    # Display the bar representing the current hp
+    pg.draw.rect(screen, colors.green, (*health_bar_pos, cur_hp_width, health_bar_height))
+
 
 
 
