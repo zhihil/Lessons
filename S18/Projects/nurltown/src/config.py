@@ -15,7 +15,13 @@ NURLET_WIDTH = 50
 NURLET_HEIGHT = 50
 
 # The speed at which the nurlets travel (# of pixels/frame)
-NURLET_SPEED = 10
+NURLET_SPEED = 8
+
+# The speed at which the hostile nurlets travel (# of pixels/frame)
+HOSTILE_NURLET_SPEED = 7
+
+# The maximum HP of the nurlets
+NURLET_MAX_HP = 100
 
 # The maximum angle of deflection from origin during the shuffling animation
 NURLET_SHUFFLE_ANGLE = 15
