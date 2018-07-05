@@ -3,10 +3,22 @@
 Create your own personal portfolio website to showcase your awesome side projects and resume!
 
 ## Objectives
-
+- build a personal portfolio website from scratch
+- stylize our site in the spirit of other [portfolio website templates](https://www.free-css.com/free-css-templates/page225/spectrum)
+- add side projects each with an accompanying photo
+- add clickable link that brings reader to resume 
 
 ## Tools & Components
-
+- **HTML**
+  - structures our site
+- **CSS**
+  - styles our site
+- **JavaScript**
+  - adds site behaviour via programming
+- **Bootstrap** framework
+  - makes site styling easier
+- **jQuery** library
+  - makes site animations and programming easier
 
 ## Tentative "Syllabus"
 | Lesson # | Week # | Date          | Description                                             |
@@ -35,14 +47,19 @@ Create your own personal portfolio website to showcase your awesome side project
 ### Sublime Text Editor
 In this project, we will only require one text editor and any text editor will be suitable for this proejct. We will specifically working with [Sublime Text](https://www.sublimetext.com/3)
 
+<img src="https://upload.wikimedia.org/wikipedia/en/d/d2/Sublime_Text_3_logo.png" alt="Sublime Text logo" width="300px"/>
 
 ### HTML, CSS, JavaScript
 There is no installation required for HTML, CSS, or JavaScript. 
+
+<img src="https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" alt="HTML, CSS, JS logos" width="500px"/>
 
 ### Bootstrap
 The fastest way to include Bootstrap in this project is to use the CDN provided on the [Bootstrap website](https://getbootstrap.com/docs/3.3/getting-started/). To use their CDN, copy and paste the code below in the head of your HTML document.
 
 CDN stands for Content Delivery Network and is a server network that, in our case, provides access to Bootstrap.
+
+<img src="https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png" alt="Bootstrap logo" width="500px"/>
 
 ```html
 <!-- Latest compiled and minified CSS -->
@@ -57,6 +74,8 @@ CDN stands for Content Delivery Network and is a server network that, in our cas
 
 ### jQuery
 The The fastest way to include Bootstrap in this project is to use the CDN provided on the [jQuery website](https://code.jquery.com/). To use their CDN, copy and paste the code below in the head of your HTML document. way to 
+
+<img src="https://wpnewsify-cdn26.netdna-ssl.com/wp-content/uploads/2018/04/jQuery-794x398.jpg" alt="jQuery logo" width="500px"/>
 
 ```html
 <script
