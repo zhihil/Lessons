@@ -28,11 +28,10 @@ You can find the glossary of terms used throughout this project
 | 2        | 6      | June 6, 2018  | `-- OPTIONAL MEETUP (AHRAR UNAVAILABLE) --` |
 | 3        | 7      | June 13, 2018 | Finish installation; learn about object oriented programming  |
 | 3        | 8      | June 20, 2018 | Work through Pygame tutorial; code the ecosystem and entities  |
-| 4        | 9      | June 27, 2018 | -- | 
-| 6        | 10     | July 4, 2018  | -- |
-| 7        | 11     | July 11, 2018 | -- |
-| 8        | 12     | July 18, 2018 | Catch-up and polishing time                    |
-| -        | 13     | July 25, 2018 | End of Term Event!                             |
+| 4        | 9      | June 27, 2018 | Learn about pygame classes and populate the game with food and nurlets | 
+| 6        | 10     | July 4, 2018  | Allow user to control nurlet; implement custom AI for enemies; begin personalizing game |
+| 7        | 11     | July 11, 2018 | Show a health bar and allow nurlet to take damage; add final touches to game |
+| 8        | 12     | July 16, 2018 | End-of-Term event! Show off your game to the world! |
 
 
 ## Project Members
