@@ -201,7 +201,9 @@ class Nurlet(MobileEntity):
         :param food: A group of food entities that currently exist in the game
         :type food: pygame.sprite.Group
         """
-        pg.sprite.spritecollide(self, food, True)
+        food_eaten = pg.sprite.spritecollide(self, food, True)
+        self.hp += len(food_eaten)
+        self.hp = min(100, self.hp)
 
     def take_damage(self, hostiles):
         """
