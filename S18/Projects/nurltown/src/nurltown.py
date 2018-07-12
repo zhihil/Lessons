@@ -31,6 +31,9 @@ def main():
     test_font = pg.font.SysFont('Helvetica', 30)
     test_text = test_font.render('GAME DEVELOPMENT IN PROGRESS...', False, (255, 0, 0))
 
+    # Import background
+    bg = pg.image.load("assets/grass_background.jpg")
+
     screen = pg.display.set_mode((width, height))       # create a display object representing the game screen
     constrain_within_screen = screen_constraint_generator(screen)
     get_random_pos = random_pos_generator(screen)
@@ -43,7 +46,12 @@ def main():
     hostile_nurlets = [ntts.HostileNurlet(*get_random_pos()) for x in range(2)]
     jellies = [ntts.Food(*get_random_pos()) for x in range(cfg.MAX_NUM_FOOD)]
 
-    entity_groups = [food, nurlets, hostiles]
+    # entity_groups = [food, nurlets, hostiles]
+    entity_groups = {
+        'food': food,
+        'nurlets': nurlets,
+        'hostiles': hostiles
+    }
 
     nurlets.add(nurlet)
     hostiles.add(hostile_nurlets)
@@ -66,9 +74,10 @@ def main():
 
         # Clear the screen
         screen.fill(colors.black)
+        screen.blit(bg, (0, 0))
 
         # Update the nurlets
-        nurlets.update(food, keys_pressed)
+        nurlets.update(food, hostiles, keys_pressed)
 
         # Update the hostiles
         hostiles.update(food)
@@ -77,9 +86,8 @@ def main():
         num_to_respawn = max(0, cfg.MAX_NUM_FOOD - len(food))
         if num_to_respawn: food.add(ntts.Food(*get_random_pos()))
 
-
         # Redraw the entities
-        for group in entity_groups:
+        for group in entity_groups.values():
             for sprite in group.sprites():
                 constrain_within_screen(sprite)
             group.draw(screen)
@@ -89,6 +97,11 @@ def main():
 
         # Display the health bar
         draw_health_bar(screen, nurlet.hp)
+
+        if nurlet.hp <= 0:
+            font = pg.font.SysFont('Marker Felt Wide', 120, True)
+            game_over_text = font.render('GAME OVER!', False, (255, 0, 0))
+            screen.blit(game_over_text, (120, height/2 - 60))
 
         pg.display.update()
 

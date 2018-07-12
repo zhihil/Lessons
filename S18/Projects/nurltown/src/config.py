@@ -16,9 +16,11 @@ NURLET_HEIGHT = 50
 
 # The speed at which the nurlets travel (# of pixels/frame)
 NURLET_SPEED = 8
+NURLET_INVINCIBILITY_DURATION = 30
 
 # The speed at which the hostile nurlets travel (# of pixels/frame)
 HOSTILE_NURLET_SPEED = 7
+HOSTILE_NURLET_STRENGTH = 10
 
 # The maximum HP of the nurlets
 NURLET_MAX_HP = 100

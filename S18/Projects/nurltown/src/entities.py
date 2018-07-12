@@ -138,8 +138,10 @@ class Nurlet(MobileEntity):
         # Set the movement speed and initial hp
         self.speed = cfg.NURLET_SPEED
         self.hp = cfg.NURLET_MAX_HP
+        self.duration_invincibility = 0
 
-    def update(self, food, key_input):
+
+    def update(self, food, hostiles, key_input):
         """
         Function to update the state of the Nurlet. This update phase determines whether the Nurlet
         moves, eats, attacks, or defends, based on its surroundings and the rest of the game state
@@ -152,6 +154,7 @@ class Nurlet(MobileEntity):
         # self.seek_closest(food)
         self.move_by_user(key_input)
         self.eat_nearby(food)
+        self.take_damage(hostiles)
 
     def move_by_user(self, key_input):
         """
@@ -198,7 +201,28 @@ class Nurlet(MobileEntity):
         :param food: A group of food entities that currently exist in the game
         :type food: pygame.sprite.Group
         """
-        pg.sprite.spritecollide(self, food, True)
+        food_eaten = pg.sprite.spritecollide(self, food, True)
+        self.hp += len(food_eaten)
+        self.hp = min(100, self.hp)
+
+    def take_damage(self, hostiles):
+        """
+        TODO: DOCUMENTATION
+        """
+        attacking_hostile = pg.sprite.spritecollide(self, hostiles, False)
+        damage_taken = cfg.HOSTILE_NURLET_STRENGTH * len(attacking_hostile)
+
+        if damage_taken and not self.was_recently_damaged():
+            self.hp -= damage_taken
+            self.hp = max(0, self.hp)
+
+    def was_recently_damaged(self):
+        if self.duration_invincibility:
+            self.duration_invincibility -= 1
+            return True
+        else:
+            self.duration_invincibility = cfg.NURLET_INVINCIBILITY_DURATION
+            return False
 
 
 class HostileNurlet(Nurlet):
