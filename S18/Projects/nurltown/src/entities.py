@@ -130,7 +130,7 @@ class Nurlet(MobileEntity):
 
         # Load the image to represent the entity
         sprite = pg.image.load("assets/sprites/pug.png")
-        sprite = pg.transform.scale(sprite, (80, 80))
+        sprite = pg.transform.scale(sprite, (60, 60))
 
         # Call the parent class constructor
         super().__init__(sprite, init_x, init_y)
@@ -139,6 +139,7 @@ class Nurlet(MobileEntity):
         self.speed = cfg.NURLET_SPEED
         self.hp = cfg.NURLET_MAX_HP
         self.duration_invincibility = 0
+        self.score = 0
 
 
     def update(self, food, hostiles, key_input):
@@ -202,6 +203,7 @@ class Nurlet(MobileEntity):
         :type food: pygame.sprite.Group
         """
         food_eaten = pg.sprite.spritecollide(self, food, True)
+        self.score += len(food_eaten)
         self.hp += len(food_eaten)
         self.hp = min(100, self.hp)
 

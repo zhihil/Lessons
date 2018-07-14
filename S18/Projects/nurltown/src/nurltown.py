@@ -98,12 +98,33 @@ def main():
         # Display the health bar
         draw_health_bar(screen, nurlet.hp)
 
+        # Display the score
+        draw_score(screen, nurlet.score)
+
         if nurlet.hp <= 0:
             font = pg.font.SysFont('Marker Felt Wide', 120, True)
-            game_over_text = font.render('GAME OVER!', False, (255, 0, 0))
+            game_over_text = font.render('GAME OVER!', False, colors.red)
             screen.blit(game_over_text, (120, height/2 - 60))
 
         pg.display.update()
+
+def draw_score(screen, score):
+    """
+    A function which draws the player score on the screen
+    :param screen: A game screen
+    :type screen: pygame.Surface
+    :param score: The score of the player
+    :type cur_hp: int
+    """
+
+    # Set up the title text
+    font = pg.font.SysFont('Marker Felt Wide', 50, True)
+    title = font.render('SCORE', False, colors.white)
+    score = font.render(str(score), False, colors.white)
+
+    # Display title
+    screen.blit(title, (740, 25))
+    screen.blit(score, (740, 60))
 
 def draw_health_bar(screen, cur_hp, max_hp=100):
     """
@@ -125,7 +146,7 @@ def draw_health_bar(screen, cur_hp, max_hp=100):
 
     # Set up the title text
     font = pg.font.SysFont('Marker Felt Wide', 30, True)
-    title = font.render('HEALTH', False, (255, 255, 255))
+    title = font.render('HEALTH', False, colors.white)
 
     # Display title
     screen.blit(title, (25, 25))
