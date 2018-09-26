@@ -7,7 +7,7 @@ Learn the basics such as HTML, CSS, Javascript, and Bootstrap to get you started
 Code your own blog forum with login and simple post functionalities using Ruby on Rails. Basic knowledge of HTML/CSS/JS is recommended.
 
 ### Machine Learning
-Train a Reddit bot to detect cyberbullying, recommend books, sugget music, and summarize posts using Python.
+Train a Reddit bot to detect cyberbullying, recommend books, suggest music, and summarize posts using Python and Scikit-learn.
 
 ### Automation
 Create your own Slack bot to help you check the weather, display your class schedule, and set reminders and notifications using Elixir and Phoenix.
@@ -16,4 +16,4 @@ Create your own Slack bot to help you check the weather, display your class sche
 Design and code your own automatic coffee stirrer using an Arduino microcontroller, sensors, and circuit design.
 
 ### UX/UI
-Learn the basics of a mobile app design process, from ideation and wireframing to prototyping, while using Figma and Envision Studio. By the end of the course, you will be equipped with a portfolio piece and the skills to write your own case study. 
+Learn the basics of a mobile app design process, from ideation and wireframing to prototyping, while using InVision Studio and Figma. 
