@@ -101,7 +101,7 @@ end
 ```
 
 ### config/routes.rb
-Routes are a Rails concept that map URLs to 
+Routes are a Rails concept that map URLs to controls that can do things.
 ```ruby
 Rails.application.routes.draw do
   root 'application#hello'
