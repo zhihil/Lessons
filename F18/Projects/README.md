@@ -7,7 +7,7 @@ Learn the basics such as HTML, CSS, Javascript, and Bootstrap to get you started
 Code your own blog forum with login and simple post functionalities using Ruby on Rails. Basic knowledge of HTML/CSS/JS is recommended.
 
 ### Machine Learning
-Train a Reddit bot to detect cyberbullying, recommend books, suggest music, and summarize posts using Python and Scikit-learn.
+Train a Reddit bot to detect cyberbullying, recommend books, suggest music, or summarize posts using Python and Scikit-learn.
 
 ### Automation
 Create your own Slack bot to help you check the weather, display your class schedule, and set reminders and notifications using Elixir and Phoenix.
