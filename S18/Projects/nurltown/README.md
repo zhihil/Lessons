@@ -4,9 +4,10 @@ The happy, sunshiney little village of Nurltown has been overrun by angry jelly 
 run for his life, while eating his beloved drumsticks!
 
 ## Objectives
-* Design a 2D game engine to run the simulation
-* Develop neural networks to give your nurlet a brain (it’s ALIIIIIVE!!)
-* Implement evolutionary algorithms to teach your nurlets how to eat, grow, multiply, and defend against their enemies
+* Learn the basics of object-oriented programming
+* Learn the fundamental of game design, and the principles of a game engine
+* Design a 2D game engine to run the game
+* Add visual details and game features to create an immersive player experience
 
 ## Tools & Components
 * python 3
