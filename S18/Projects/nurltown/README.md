@@ -37,13 +37,9 @@ You can find the glossary of terms used throughout this project
 * Ahrar Monsur (Team Lead)
 * Aditi Sharma
 * Akshar Goyal
-* Cindy Xie
-* Dhruvit Bhavsar
-* Dylan Hermatillake
 * Jiwoo Jang
-* Mahir Rashid
-* Shawn Sui
 * Shivam Suthendran
+* Jin Han
 
 ## Installation
 
