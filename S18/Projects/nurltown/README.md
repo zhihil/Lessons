@@ -1,4 +1,4 @@
-# Nurltown: an machine learning powered ecosystem simulator
+# A Pug's Life: Simple 2D game where a pug runs for his life while snacking on drumsticks
 
 The happy, sunshiney little village of Nurltown, where virtual creatures (nurlets) run around, have outdoor potlucks,
 and **fight to the death.**
