@@ -13,9 +13,7 @@ run for his life, while eating his beloved drumsticks!
 * python 3
 * virtualenv for sandboxing python
 * numpy numerical computation package
-* scipy library for scientific computing
 * pyGame library for game development
-* our very own custom NEAT implementation
 
 ## Glossary
 You can find the glossary of terms used throughout this project
