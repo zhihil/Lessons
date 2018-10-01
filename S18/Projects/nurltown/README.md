@@ -1,7 +1,7 @@
 # A Pug's Life: Simple 2D game where a pug runs for his life while snacking on drumsticks
 
-The happy, sunshiney little village of Nurltown, where virtual creatures (nurlets) run around, have outdoor potlucks,
-and **fight to the death.**
+The happy, sunshiney little village of Nurltown has been overrun by angry jelly blobs, and a brave little pug must 
+run for his life, while eating his beloved drumsticks!
 
 ## Objectives
 * Design a 2D game engine to run the simulation
