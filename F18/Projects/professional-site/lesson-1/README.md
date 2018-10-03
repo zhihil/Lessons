@@ -15,19 +15,16 @@ In this project, we will only require one text editor and any text editor will b
 
 <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/Sublime_Text_3_logo.png" alt="Sublime Text logo" width="300px"/>
 
-### HTML, CSS, JavaScript
-There is no installation required for HTML, CSS, or JavaScript. 
-
-<img src="https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" alt="HTML, CSS, JS logos" width="500px"/>
-
-## 2. Technologies & Tools
-
 ### 1. HTML
 HTML stands for Hyper Text Markup Language. HTML is the language we will use to structure and define our web page. 
 
 Each HTML file is one web page and vice versa.
 
 HTML by itself looks bland, but we can fix that with CSS.
+
+There is no installation required for HTML, CSS, or JavaScript. 
+
+<img src="https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" alt="HTML, CSS, JS logos" width="500px"/>
 
 ### 2. CSS
 CSS stands for Cascading Style Sheets. CSS is the language we use to style our HTML to make it look more interesting.
@@ -60,8 +57,11 @@ We will install jQuery in a future lesson.
 ## 3. Coding
 
 ### 1. "Hello World" with HTML
-*Objective*: write our first webpage
+**Objective**: write our first webpage
 
+**Hints & Resources**: If you get stuck at any point at this part, [visit w3schools](https://www.w3schools.com/html/default.asp) for more instructions or ask one of us for help! Googling is always a good option too!
+
+**Instructions**:
 1. make a text file on your desktop named "index.html"
 2. edit the textfile and write the code snippet below but with your name instead of "NAME"
 ```html
@@ -73,8 +73,11 @@ We will install jQuery in a future lesson.
 4. you should see "hello world, my name is NAME!" at the top of your web page, but with your name instead of "NAME"
 
 ### 2. "Hello World" on GitHub
-*Objective*: share our first webpae on GitHub pages to share with each other
+**Objective**: share our first webpae on GitHub pages to share with each other
 
+**Hints & Resources**: If you get stuck at any point at this part, [go here for more instructions](https://pages.github.com/) or ask one of us for help! Googling is always a good option too!
+
+**Instructions**:
 1. create a GitHub account (ask Ahrar if you need help!)
 2. go to "your profile" by clicking in the top right
 3. click "Repositories"; you shouldn't have any yet if you just made an account
@@ -89,8 +92,6 @@ We will install jQuery in a future lesson.
 12. go to "http://profileName.github.io/repository" but with your actual profile name instead of "profileName"
 13. you should see the same web page you saw in part 1, but now it is being hosted on github pages instead of your laptop
 14. share the link to your webpage with other people in your group via slack!
-
-If you get stuck at any point at this part, [go here for more instructions](https://pages.github.com/) or ask one of us for help!
 
 ## 4. Optional Homework, Excellent for Practice & Learning!
 - Check out w3schools and their awesome HTML/CSS tutorials!
