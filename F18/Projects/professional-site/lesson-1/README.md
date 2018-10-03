@@ -59,14 +59,38 @@ We will install jQuery in a future lesson.
 
 ## 3. Coding
 
+### 1. "Hello World" with HTML
+Objective: write our first webpage
 
+1. make a text file on your desktop named "index.html"
+2. edit the textfile and write the code snippet below but with your name instead of "NAME"
 ```html
 <html>
-	<h1>hello world, my name is Michael!</h1>
+	<h1>hello world, my name is NAME!</h1>
 </html>
 ```
+3. open index.html with any web browser you want (eg. chrome, firefox, internet explorer,etc.); you can do this by dragging and dropping index.html onto your browser icon on your desktop
+4. you should see "hello world, my name is NAME!" at the top of your web page, but with your name instead of "NAME"
 
-## 4. Optional Practice, Excellent for Learning!
+### 2. "Hello World" on GitHub
+Objective: share our first webpae on GitHub pages to share with each other
+
+1. create a GitHub account (ask Ahrar if you need help!)
+2. go to "your profile" by clicking in the top right
+3. click "Repositories"; you shouldn't have any yet if you just made an account
+4. click "New" in green to make a new repository
+5. enter "profileName.github.io" as your repository name, but with your profile name instead of "profileName"
+6. click "create repository" in green at the bottom
+7. go back to your github profile and click the repository we just made
+8. click "upload files" on the right and select "index.html"
+9. press "commit changes" at the bottom
+10. while still looking at your repository, click "settings" on the top right
+11. scroll down to "GitHub Pages" and select "master branch" under "source" and click save
+12. go to "http://profileName.github.io/repository" but with your actual profile name instead of "profileName"
+13. you should see the same web page you saw in part 1, but now it is being hosted on github pages instead of your laptop
+14. share the link to your webpage with other people in your group via slack!
+
+## 4. Optional Homework, Excellent for Practice & Learning!
 - Check out w3schools and their awesome HTML/CSS tutorials!
 [HTML Tutorial](https://www.w3schools.com/html/default.asp)
 [CSS Tutorial](https://www.w3schools.com/css/default.asp)
@@ -74,3 +98,26 @@ We will install jQuery in a future lesson.
 [Video Playlist](https://www.youtube.com/watch?v=pm5OVxpul48&list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU&index=2)
 - Try changing the text colour and background colour https://www.w3schools.com/html/html_colors.asp
 - Try inserting pictures onto your web page https://www.w3schools.com/html/html_images.asp
+
+## 5. Homework Solutions
+Adding text colour:
+```html
+<html>
+	<h1 style="color: green">hello world, my name is Michael!</h1>
+</html>
+```
+
+Adding background colour:
+```html
+<html>
+	<h1 style="color: green; background-color: pink">hello world, my name is Michael!</h1>
+</html>
+```
+
+Inserting a picture onto your web page:
+```html
+<html>
+	<h1>hello world, my name is Michael!</h1>
+	<img src="https://i.ytimg.com/vi/wRx3Uvcktm8/maxresdefault.jpg">
+</html>
+```
