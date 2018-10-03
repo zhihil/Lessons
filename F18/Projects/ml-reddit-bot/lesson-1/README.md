@@ -39,7 +39,7 @@ IF you are a Windows user, install [Git Bash](https://git-scm.com/downloads) and
 
 Install Python 3.6.6 [Here](https://www.python.org/downloads/). **DO NOT** install version 3.7, there is an issue that breaks sklearn which is what we need to do the machine learning, it is also not supported by PRAW which we will use to interact with Reddit. Python is the programming language we will use.
 
-**If you are a Windows User and python doesn't work in terminal:** Follow this link: [Click Me](https://superuser.com/questions/143119/how-do-i-add-python-to-the-windows-path). **For the last step, put Python34 instead of Python27** and restart your computer
+**If you are a Windows User and python doesn't work in terminal:** Follow this link: [Click Me](https://superuser.com/questions/143119/how-do-i-add-python-to-the-windows-path). **For the last step, put Python36 instead of Python27** and restart your computer
 
 To check if python install correctly, type `python3` into your terminal if Mac, or `python -i` if Windows to see if it works. Type in `quit()` to exit the python shell.
 
