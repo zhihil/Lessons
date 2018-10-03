@@ -48,7 +48,7 @@ You should see stuff on GitHub now!!! On the website under your profile your rep
 
 ## 3. Parts of the app
 Rails generates a bunch of stuff for you when you first create an app. This really simplifies things for the developer gets the ball rolling. We'll talk about a few of those generated files below.
-### Gemfile
+### 3.1 Gemfile
 Rails generates a new Gemfile when you run rails new. You should have this file directly under the project directory. This is where the gems are stored. Each gem is a ruby library that extends functionality.
 ```ruby
 source 'https://rubygems.org'
@@ -90,7 +90,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ```
 
-### app/controllers/application_controller.rb
+### 3.2 app/controllers/application_controller.rb
 The controller for the application. Rails uses a Model-View-Controller (MVC) architechture to organize things. (Read more: https://medium.com/the-renaissance-developer/ruby-on-rails-http-mvc-and-routes-f02215a46a84)
 ```ruby
 class ApplicationController < ActionController::Base
@@ -102,8 +102,8 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-### app/views/layouts/application.html.erb
-An embedded Ruby file for the main application page. This would be the "View" in our MVC application. Again, you should already have the below code thanks to Rails generating it!!!
+### 3.3 app/views/layouts/application.html.erb
+An embedded Ruby file for the main application page. Looks like HTML for the most part, but you can also add ruby to the page! This would be the "View" in our MVC application. Again, you should already have the below code thanks to Rails generating it!!!
 ```html.erb
 <!DOCTYPE html>
 <html>
@@ -121,10 +121,10 @@ An embedded Ruby file for the main application page. This would be the "View" in
 </html>
 ```
 
-### The non-existant Model
+### 3.4 The non-existent model
 Hold up. We don't have the Model part of our Model-View-Controller app yet. But stay tuned! This requires creating a database table with attributes and such. If you're really interested and want to try this on your own, go right ahead! We'll be doing this next week along with adding styling.
 
-### config/routes.rb
+### 3.5 config/routes.rb
 Routes are a Rails concept that map URLs to controls that can do things. Below is an example of directing the root (the main directory) to the hello method in the application controller.
 ```ruby
 Rails.application.routes.draw do
@@ -132,7 +132,7 @@ Rails.application.routes.draw do
 end
 ```
 
-#### RESTful Routes
+#### Side note about RESTful Routes
 REpresentational State Transfer (REST) is an architectural style defined for providing standards between computer systems on the web, making it easier for systems to communicate with each other.
 
 | HTTP Method	| What it's used for      | Examples  |
@@ -158,21 +158,24 @@ The StaticPages controller file will be generated with the below command, along 
 ```bash
 $ rails generate controller StaticPages home help
 ```
+This generates the file at app/controllers/static_pages_controller.rb in your project! Go check it out and see what was generated.
 
 ### 4.3 Your turn to add stuff!
 Now, add stuff to provide something at the directory http://localhost:3000/static_pages/home and http://localhost:3000/static_pages/help!!! Currently if you navigate to those directories, you'll see something but it might not be what you want. 
 
-*Objective 1:* add a title and text describing each page of your own.
+#### Objective 1: add a title and text describing each page of your own.
+(Hint: this is where some trusty HTML is useful! Remember how those `.html.erb` files were where our webpage styling is hosted?)
 
-*Objective 2:* add an About page to go along with your Home and Help pages. (Hint: you've already created the StaticPages controller, which should host all your pages! Your About page should be at the directry http://localhost:3000/static_pages/about)
+#### Objective 2: add an About page to go along with your Home and Help pages. 
+(Hint: you've already created the StaticPages controller, which should host all your pages! Your *About* page should be at the directory http://localhost:3000/static_pages/about)
 
 ## 5. Resources
-### Learn Ruby!
+### 5.1 Learn Ruby!
 Codecademy: https://www.codecademy.com/learn/learn-ruby
 
 Online interactive Ruby tutorial: https://www.learnrubyonline.org/en/Welcome
 
-### Learn Git!
+### 5.2 Learn Git!
 Codecademy: https://www.codecademy.com/learn/learn-git
 
 Online interactive Git branching tutorial: https://learngitbranching.js.org/
