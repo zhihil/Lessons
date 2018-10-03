@@ -14,7 +14,7 @@ Create your own personal portfolio website to showcase your awesome side project
   - styles our site
 - **JavaScript**
   - adds site behaviour via programming
-- **Bootstrap** framework
+- **Bootstrap 4** framework
   - makes site styling easier
 - **jQuery** library
   - makes site animations and programming easier
@@ -42,33 +42,3 @@ In this project, we will only require one text editor and any text editor will b
 There is no installation required for HTML, CSS, or JavaScript. 
 
 <img src="https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" alt="HTML, CSS, JS logos" width="500px"/>
-
-### Bootstrap
-The fastest way to include Bootstrap in this project is to use the CDN provided on the [Bootstrap website](https://getbootstrap.com/docs/3.3/getting-started/). To use their CDN, copy and paste the code below in the head of your HTML document.
-
-CDN stands for Content Delivery Network and is a server network that, in our case, provides access to Bootstrap.
-
-<img src="https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png" alt="Bootstrap logo" width="500px"/>
-
-```html
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-```
-
-### jQuery
-The fastest way to include jQuery in this project is to use the CDN provided on the [jQuery website](https://code.jquery.com/). To use their CDN, copy and paste the code below in the head of your HTML document. way to 
-
-<img src="https://wpnewsify-cdn26.netdna-ssl.com/wp-content/uploads/2018/04/jQuery-794x398.jpg" alt="jQuery logo" width="500px"/>
-
-```html
-<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-```
