@@ -31,14 +31,3 @@ Create your own personal portfolio website to showcase your awesome side project
 | 6        | 11                   | Nov 14, 2018      | Work Session                                            |
 | -        | 12                   | Nov 21, 2018 (?)  | End of Term Event (?)                                   |
 
-## Installation
-
-### Sublime Text Editor
-In this project, we will only require one text editor and any text editor will be suitable for this proejct. We will specifically working with [Sublime Text](https://www.sublimetext.com/3)
-
-<img src="https://upload.wikimedia.org/wikipedia/en/d/d2/Sublime_Text_3_logo.png" alt="Sublime Text logo" width="300px"/>
-
-### HTML, CSS, JavaScript
-There is no installation required for HTML, CSS, or JavaScript. 
-
-<img src="https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" alt="HTML, CSS, JS logos" width="500px"/>
