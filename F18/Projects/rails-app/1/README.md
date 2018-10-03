@@ -3,7 +3,8 @@ Welcome! In the first lesson we'll go through the following:
 1. Setup
 2. Creating a new rails app
 3. Parts of the app
-4. Resources
+4. Try to make some static pages!
+5. Resources
 
 ## 1. Setup
 First, you'll need your development environment set up. Some things you'll need: 
@@ -26,7 +27,27 @@ Rails will generate a bunch of things in creating the app, including a Gemfile. 
 $ bundle install --without production
 ```
 
+To see your app in a local server, go to terminal and type:
+```bash
+$ rails server
+```
+Then navigate to http://localhost:3000/. You should see something!!!
+
+To init Git tracking, type:
+```bash
+$ git init
+$ git add -A
+$ git commit -m "Initialize repository"
+```
+Next, create a GitHub repository (fancy word for master folder type thing) and then "push" all your changes:
+```bash
+$ git remote add origin git@github.com:<username>/YOUR_APP_NAME_HERE.git
+$ git push -u origin --all
+```
+You should see stuff on GitHub now!!! On the website under your profile your repo should now have populated files.
+
 ## 3. Parts of the app
+Rails generates a bunch of stuff for you when you first create an app. This really simplifies things for the developer gets the ball rolling. We'll talk about a few of those generated files below.
 ### Gemfile
 Rails generates a new Gemfile when you run rails new. You should have this file directly under the project directory. This is where the gems are stored. Each gem is a ruby library that extends functionality.
 ```ruby
@@ -69,8 +90,20 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ```
 
+### app/controllers/application_controller.rb
+The controller for the application. Rails uses a Model-View-Controller (MVC) architechture to organize things. (Read more: https://medium.com/the-renaissance-developer/ruby-on-rails-http-mvc-and-routes-f02215a46a84)
+```ruby
+class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
+  def hello # added our own function to say something friendly
+    render html: "hello, world!"
+  end
+end
+```
+
 ### app/views/layouts/application.html.erb
-An embedded Ruby file for the main application page.
+An embedded Ruby file for the main application page. This would be the "View" in our MVC application. Again, you should already have the below code thanks to Rails generating it!!!
 ```html.erb
 <!DOCTYPE html>
 <html>
@@ -88,25 +121,17 @@ An embedded Ruby file for the main application page.
 </html>
 ```
 
-### app/controllers/application_controller.rb
-The controller for the application. Rails uses a Model-View-Controller (MVC) architechture to organize things. (Read more: https://medium.com/the-renaissance-developer/ruby-on-rails-http-mvc-and-routes-f02215a46a84)
-```ruby
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-
-  def hello
-    render html: "hello, world!"
-  end
-end
-```
+### The non-existant Model
+Hold up. We don't have the Model part of our Model-View-Controller app yet. But stay tuned! This requires creating a database table with attributes and such. If you're really interested and want to try this on your own, go right ahead! We'll be doing this next week along with adding styling.
 
 ### config/routes.rb
-Routes are a Rails concept that map URLs to controls that can do things.
+Routes are a Rails concept that map URLs to controls that can do things. Below is an example of directing the root (the main directory) to the hello method in the application controller.
 ```ruby
 Rails.application.routes.draw do
   root 'application#hello'
 end
 ```
+
 #### RESTful Routes
 REpresentational State Transfer (REST) is an architectural style defined for providing standards between computer systems on the web, making it easier for systems to communicate with each other.
 
@@ -119,8 +144,29 @@ REpresentational State Transfer (REST) is an architectural style defined for pro
 
 Source: https://richonrails.com/articles/understanding-rails-routing
 
+## 4. Try to make some static pages!!!
+Alright. Now it's your turn to explore! Your objective is to create a few static pages on your website. This could include a *Help* page and an *About* page.
 
-## 4. Resources
+### 4.1 Create a branch
+To get started, create a "branch" which is a local copy of your workspace/files that can keep track of changes to the original files.
+```bash
+$ git checkout -b static-pages
+```
+
+### 4.2 Generate a controller
+The StaticPages controller file will be generated with the below command, along with two empty methods, home and help:
+```bash
+$ rails generate controller StaticPages home help
+```
+
+### 4.3 Your turn to add stuff!
+Now, add stuff to provide something at the directory http://localhost:3000/static_pages/home and http://localhost:3000/static_pages/help!!! Currently if you navigate to those directories, you'll see something but it might not be what you want. 
+
+*Objective 1:* add a title and text describing each page of your own.
+
+*Objective 2:* add an About page to go along with your Home and Help pages. (Hint: you've already created the StaticPages controller, which should host all your pages! Your About page should be at the directry http://localhost:3000/static_pages/about)
+
+## 5. Resources
 ### Learn Ruby!
 Codecademy: https://www.codecademy.com/learn/learn-ruby
 
