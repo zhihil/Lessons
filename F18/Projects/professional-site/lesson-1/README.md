@@ -60,7 +60,7 @@ We will install jQuery in a future lesson.
 ## 3. Coding
 
 ### 1. "Hello World" with HTML
-Objective: write our first webpage
+*Objective*: write our first webpage
 
 1. make a text file on your desktop named "index.html"
 2. edit the textfile and write the code snippet below but with your name instead of "NAME"
@@ -73,7 +73,7 @@ Objective: write our first webpage
 4. you should see "hello world, my name is NAME!" at the top of your web page, but with your name instead of "NAME"
 
 ### 2. "Hello World" on GitHub
-Objective: share our first webpae on GitHub pages to share with each other
+*Objective*: share our first webpae on GitHub pages to share with each other
 
 1. create a GitHub account (ask Ahrar if you need help!)
 2. go to "your profile" by clicking in the top right
@@ -90,14 +90,15 @@ Objective: share our first webpae on GitHub pages to share with each other
 13. you should see the same web page you saw in part 1, but now it is being hosted on github pages instead of your laptop
 14. share the link to your webpage with other people in your group via slack!
 
+If you get stuck at any point at this part, [go here for more instructions](https://pages.github.com/) or ask one of us for help!
+
 ## 4. Optional Homework, Excellent for Practice & Learning!
 - Check out w3schools and their awesome HTML/CSS tutorials!
 [HTML Tutorial](https://www.w3schools.com/html/default.asp)
 [CSS Tutorial](https://www.w3schools.com/css/default.asp)
-- Watch some of this HTML/CSS tutorial playlist to get ahead!
-[Video Playlist](https://www.youtube.com/watch?v=pm5OVxpul48&list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU&index=2)
-- Try changing the text colour and background colour https://www.w3schools.com/html/html_colors.asp
-- Try inserting pictures onto your web page https://www.w3schools.com/html/html_images.asp
+- Watch some of this [HTML/CSS tutorial video playlist](https://www.youtube.com/watch?v=pm5OVxpul48&list=PL0eyrZgxdwhwNC5ppZo_dYGVjerQY3xYU&index=2) to get ahead!
+- Try [changing the text colour and background colour](https://www.w3schools.com/html/html_colors.asp)
+- Try [inserting pictures onto your web page](https://www.w3schools.com/html/html_images.asp)
 
 ## 5. Homework Solutions
 Adding text colour:
